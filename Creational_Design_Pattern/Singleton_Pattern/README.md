@@ -1,7 +1,9 @@
-## Singleton 
+## Singleton
 
 Singleton is a creational design pattern that lets you ensure that a class has only one instance, while providing a global access point to this instance.
 
+[<img src="https://refactoring.guru/images/patterns/content/singleton/singleton.png">]()
+Source: [Refactoring Guru](https://refactoring.guru/design-patterns/singleton)
 ### - Real-World Analogy
 
 The government is an excellent example of the Singleton pattern. A country can have only one official government. Regardless of the personal identities of the individuals who form governments, the title, “The Government of X”, is a global point of access that identifies the group of people in charge.
@@ -13,7 +15,7 @@ The government is an excellent example of the Singleton pattern. A country can h
 
 ### - Solution
 
-### - Advantages 
+### - Advantages
 - Single instance :Ensures that a class has only one instance and provides a global point of access to that instance.
 - Global access: Provides a single access point for the entire application, making it easy to control and manage resources.
 - Resource sharing: Allows for the sharing of resources among multiple parts of the codebase, maintaining a single point of control.
@@ -22,6 +24,6 @@ The government is an excellent example of the Singleton pattern. A country can h
 
 ### - Disadvantages
 - Global State:
-- Tight Coupling: 
+- Tight Coupling:
 - Testing Challenges
 - Subclassing Problem
