@@ -5,21 +5,28 @@
 
 class Singleton {
  private:
+  /**
+   * @brief default constructor made private to avoid multiple instance
+   *
+   * @param value
+   */
   Singleton(const std::string& value) : m_value(value){};
+
+ private:
   static Singleton* m_instance;
   std::string m_value;
   static std::mutex m_mutex;
 
  public:
   /**
-   * @brief Construct a new Singleton object
+   * @brief Delete other singleton instances
    *
    * @param other
    */
   Singleton(Singleton& other) = delete;
 
   /**
-   * @brief
+   * @brief operator overloading to avoid singleton instance generation
    *
    */
   void operator=(const Singleton&) = delete;
@@ -39,12 +46,13 @@ class Singleton {
   }
 
   /**
-   * @brief
+   * @brief get the value
    *
    * @return std::string
    */
   std::string value() const { return this->m_value; }
 };
+
 
 Singleton* Singleton::m_instance = nullptr;
 std::mutex Singleton::m_mutex;
