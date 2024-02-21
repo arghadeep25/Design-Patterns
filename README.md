@@ -6,7 +6,7 @@
 ### Types of Design Patterns
 
 - [Creational Design Pattern](https://github.com/arghadeep25/Design-Patterns/tree/main/Creational_Design_Pattern)
-    - [Singleton]()
+    - [Singleton](https://github.com/arghadeep25/Design-Patterns/tree/main/Creational_Design_Pattern/Singleton_Pattern)
     - [Factory Method]()
     - [Abstract Factory Method]()
     - [Builder]()
