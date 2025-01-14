@@ -4,6 +4,11 @@ The Factory Method is a creational design pattern that provides an interface for
 
 ### Real World Analogy
 
+- Logistics company is a base class
+- Different modes of transport are the transport class
+- Clients only interact with the logistic company with the requirement
+  of mode of transport without worrying about the implementation details of the transport.
+
 
 ### Problem
 
