@@ -2,6 +2,15 @@
 
  Builder Pattern is a design pattern used to construct complex objects step by step. It allows for the creation of different types and representations of an object using the same construction process. The builder pattern is particularly useful when the object to be created has many possible configurations, making it easier to construct it incrementally and flexibly.
 
+### Main Components
+
+1. Product: Complex object that requires multiple steps to build
+2. Builder (Abstract Builder): defines the contract all builders must follow
+3. Concrete Builder: build the product step by step as per director's instruction
+4. Director: ensures the construction process follows a specific sequence and steps
+
+
+
 ### Real World Analogy
 
 The Builder Pattern is like a chef in a restaurant. The chef is given instructions (via a recipe) to build a dish step by step, using the same set of ingredients (components). The client (restaurant customer) doesn’t need to know how the dish is prepared—only that they will get the dish with the desired components (e.g., wooden house or stone house). Each chef (builder) might use a slightly different process to prepare the dish, but the customer always receives the final product (house).
