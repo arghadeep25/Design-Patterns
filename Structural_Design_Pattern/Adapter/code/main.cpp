@@ -28,6 +28,7 @@ class Mp4Player : public AdvancedMediaPlayer {
 class VLCPlayer : public AdvancedMediaPlayer {
  public:
   void playMp4(const std::string &) const override {}
+
   void playVLC(const std::string &filename) const override {
     std::cout << "Playing VLC file:: " << filename << std::endl;
   }
@@ -37,8 +38,6 @@ class VLCPlayer : public AdvancedMediaPlayer {
 class MediaAdapter : public MediaPlayer {
  public:
   explicit MediaAdapter(const std::string &mediaType) : mediaType(mediaType) {
-    // advancedPlayer = (mediaType == "mp4") ? std::make_shared<Mp4Player>()
-    //                                     : std::make_shared<VLCPlayer>();
     if (mediaType == "mp4")
       advancedPlayer = std::make_shared<Mp4Player>();
     else if (mediaType == "vlc")
