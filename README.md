@@ -7,7 +7,7 @@
 
 - [Creational Design Pattern](https://github.com/arghadeep25/Design-Patterns/tree/main/Creational_Design_Pattern)
     - [Singleton](https://github.com/arghadeep25/Design-Patterns/tree/main/Creational_Design_Pattern/Singleton_Pattern)
-    - [Factory Method]()
+    - [Factory Method](Creational_Design_Pattern/Factory_Method/)
     - [Abstract Factory Method]()
     - [Builder]()
     - [Prototype]()
