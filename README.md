@@ -29,6 +29,20 @@ Before diving into design patterns, it's essential to understand core object-ori
   };
   ```
 - `Abstraction` – Hiding implementation details and exposing only the necessary functionalities.
+  ```
+  // Abstract class
+  class Shape {
+    public:
+      virtual void draw() const = 0; // Pure virtual function (abstract method)
+      virtual ~Shape() = default;
+  };
+  
+  // Concrete example
+  class Circle : public Shape {
+    public:
+      void draw() const override { std::cout << "Drawing a Circle" << std::endl; }
+  };
+  ```
 - `Inheritance` – Enabling a class to acquire properties and behavior from another class.
 - `Polymorphism` – Allowing objects to be treated as instances of their parent type, enabling dynamic behavior.
 - `Open/Closed Principle` – A class should be open for extension but closed for modification, meaning new features should be added without altering existing code.
