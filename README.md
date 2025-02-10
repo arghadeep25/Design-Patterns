@@ -48,16 +48,16 @@ Before diving into design patterns, it's essential to understand core object-ori
 
 ## Most Commonly Used
 ### Creational Patterns
-- Singleton – Ensures only one instance of a class exists and provides a global access point.
-- Factory Method – Provides an interface for creating objects in a superclass but allows subclasses to alter the type of objects that will be created.
-- Builder – Separates the construction of a complex object from its representation.
+- `Singleton` – Ensures only one instance of a class exists and provides a global access point.
+- `Factory Method` – Provides an interface for creating objects in a superclass but allows subclasses to alter the type of objects that will be created.
+- `Builder` – Separates the construction of a complex object from its representation.
 
 ### Structural Patterns
-- Adapter – Allows incompatible interfaces to work together.
-- Facade – Provides a simplified interface to a complex subsystem.
-- Decorator – Dynamically adds behavior to objects without modifying their code.
+- `Adapter` – Allows incompatible interfaces to work together.
+- `Facade` – Provides a simplified interface to a complex subsystem.
+- `Decorator` – Dynamically adds behavior to objects without modifying their code.
 
 ### Behavioral Patterns
-- Observer – Defines a dependency between objects so that when one changes state, all its dependents are notified.
-- Strategy – Allows selecting an algorithm's behavior at runtime.
-- State – Allows an object to change its behavior when its internal state changes.
+- `Observer` – Defines a dependency between objects so that when one changes state, all its dependents are notified.
+- `Strategy` – Allows selecting an algorithm's behavior at runtime.
+- `State` – Allows an object to change its behavior when its internal state changes.
