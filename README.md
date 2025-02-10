@@ -7,6 +7,27 @@ Design Pattern is a reusable solution to a common problem in software design. It
 Before diving into design patterns, it's essential to understand core object-oriented principles:
 
 - `Encapsulation` – Bundling data and methods that operate on the data into a single unit (class), restricting direct access to certain details.
+  ```
+  class Account {
+    private:
+      // prevents unintended modification of the data and 
+      // ensures controlled access
+      double balance;
+
+    public:
+      Account(double initial_balance) : balance(initial_balance) {}
+      
+      // allowing interaction of variable balance in a controlled manner
+      // ensures data security and better maintainability
+      void deposit(double amount) { balance += amount; }
+    
+      void withdraw(double amount) {
+        if (amount <= balance) balance -= amount;
+      }
+    
+      double get_balance() const { return balance; }
+  };
+  ```
 - `Abstraction` – Hiding implementation details and exposing only the necessary functionalities.
 - `Inheritance` – Enabling a class to acquire properties and behavior from another class.
 - `Polymorphism` – Allowing objects to be treated as instances of their parent type, enabling dynamic behavior.
