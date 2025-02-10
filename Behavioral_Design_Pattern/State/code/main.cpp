@@ -87,11 +87,20 @@ void StoppedState::press_play(MusicPlayer &player) {
 
 void MusicPlayer::set_state(
     const std::shared_ptr<MusicPlayerState> &new_state) {
+  // the state changing from current to another is
+  // happening here.
   this->state = new_state;
 }
 
 // Context Method Implementation
-void MusicPlayer::press_play() { this->state->press_play(*this); }
+void MusicPlayer::press_play() {
+  // get the current state using this->state and call
+  // press_play() on that state. pass *this(MusicPlayer)
+  // instance to the state. these functions are in
+  // state class need access to the MusicPlayer so thay
+  // can change its state
+  this->state->press_play(*this);
+}
 
 void MusicPlayer::press_pause() { this->state->press_pause(*this); }
 
