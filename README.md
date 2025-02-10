@@ -45,3 +45,19 @@ Before diving into design patterns, it's essential to understand core object-ori
   - [Strategy](Behavioral_Design_Pattern/Strategy/) Navigation app that allows a user to select different transportation modes. Car navigation, Bike navigation, Walking navigation.
   - [Template](Behavioral_Design_Pattern/Template/) Making tea and coffee. Both processes share common steps. Boil water. Brew the drink (tea leaves or coffee grounds). Pour into a cup. Add extras (lemon for tea, milk/sugar for coffee)
   - [Visitor](Behavioral_Design_Pattern/Visitor/) Think of a museum with different types of exhibits. Instead of modifying each exhibit when a new type of visitor (e.g., student, tourist, researcher) comes in, we define a visitor interface that applies different behaviors depending on the visitor type.
+
+## Most Commonly Used
+### Creational Patterns
+- Singleton – Ensures only one instance of a class exists and provides a global access point.
+- Factory Method – Provides an interface for creating objects in a superclass but allows subclasses to alter the type of objects that will be created.
+- Builder – Separates the construction of a complex object from its representation.
+
+### Structural Patterns
+- Adapter – Allows incompatible interfaces to work together.
+- Facade – Provides a simplified interface to a complex subsystem.
+- Decorator – Dynamically adds behavior to objects without modifying their code.
+
+### Behavioral Patterns
+- Observer – Defines a dependency between objects so that when one changes state, all its dependents are notified.
+- Strategy – Allows selecting an algorithm's behavior at runtime.
+- State – Allows an object to change its behavior when its internal state changes.
