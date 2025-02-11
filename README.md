@@ -113,6 +113,34 @@ Before diving into design patterns, it's essential to understand core object-ori
   };
   ```
 - `Dependency Inversion Principle` – High-level modules should not depend on low-level modules; both should depend on abstractions.
+  ```
+  // High-level module (depends on abstraction, not a concrete class)
+  class IMessageService {
+    public:
+      virtual ~IMessageService() = default;
+      virtual void sendMessage(const std::string& msg) const = 0;
+  };
+
+  // Low-level module (implements the abstraction)
+  class EmailService : public IMessageService {
+    public:
+      void sendMessage(const std::string& msg) const override {
+          std::cout << "Sending Email: " << msg << std::endl;
+      }
+  };
+
+  // High-level module depends on the abstraction, not the concrete class
+  class Notification {
+      std::shared_ptr<IMessageService> messageService;
+    public:
+      explicit Notification(std::shared_ptr<IMessageService> service) 
+          : messageService(std::move(service)) {}
+
+      void notifyUser(const std::string& msg) {
+          messageService->sendMessage(msg);
+      }
+  };
+  ```
 - `Composition Over Inheritance` – Prefer object composition (combining objects) over class inheritance to create flexible and reusable code.
 
 
