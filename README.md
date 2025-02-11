@@ -73,6 +73,27 @@ Before diving into design patterns, it's essential to understand core object-ori
   };
   ```
 - `Open/Closed Principle` – A class should be open for extension but closed for modification, meaning new features should be added without altering existing code.
+  ```
+  // Base class (Open for extension)
+  class Shape {
+    public:
+      virtual double area() const = 0; // Abstract method
+      virtual ~Shape() = default;
+  };
+  // Extended classes (Closed for modification)
+  class Rectangle : public Shape {
+      double width, height;
+    public:
+      Rectangle(double w, double h) : width(w), height(h) {}
+      double area() const override { return width * height; }
+  };
+  class Circle : public Shape {
+      double radius;
+    public:
+      Circle(double r) : radius(r) {}
+      double area() const override { return 3.14159 * radius * radius; }
+  };
+  ```
 - `Single Responsibility Principle` – A class should have only one reason to change, meaning it should have a single responsibility.
 - `Dependency Inversion Principle` – High-level modules should not depend on low-level modules; both should depend on abstractions.
 - `Composition Over Inheritance` – Prefer object composition (combining objects) over class inheritance to create flexible and reusable code.
