@@ -95,6 +95,23 @@ Before diving into design patterns, it's essential to understand core object-ori
   };
   ```
 - `Single Responsibility Principle` – A class should have only one reason to change, meaning it should have a single responsibility.
+  ```
+  // Class handling user data (Single Responsibility: Managing user details)
+  class User {
+      std::string name;
+    public:
+      User(std::string n) : name(n) {}
+      std::string getName() const { return name; }
+  };
+
+  // Class handling user-related database operations (Separate Responsibility)
+  class UserRepository {
+    public:
+      void saveUser(const User& user) {
+          std::cout << "Saving user: " << user.getName() << std::endl;
+      }
+  };
+  ```
 - `Dependency Inversion Principle` – High-level modules should not depend on low-level modules; both should depend on abstractions.
 - `Composition Over Inheritance` – Prefer object composition (combining objects) over class inheritance to create flexible and reusable code.
 
