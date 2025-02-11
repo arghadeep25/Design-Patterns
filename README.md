@@ -44,7 +44,34 @@ Before diving into design patterns, it's essential to understand core object-ori
   };
   ```
 - `Inheritance` – Enabling a class to acquire properties and behavior from another class.
+  ```
+  class Animal {
+    public:
+      void makeSound() const { std::cout << "Animal makes a sound" << std::endl; }
+  };
+
+  class Dog : public Animal {
+    public:
+      void bark() const { std::cout << "Dog barks" << std::endl; }
+  };
+  ```
 - `Polymorphism` – Allowing objects to be treated as instances of their parent type, enabling dynamic behavior.
+  ```
+  class Animal {
+    public:
+      virtual void makeSound() const { std::cout << "Animal makes a sound" << std::endl; }
+  };
+
+  class Dog : public Animal {
+    public:
+      void makeSound() const override { std::cout << "Dog barks" << std::endl; }
+  };
+
+  class Cat : public Animal {
+    public:
+      void makeSound() const override { std::cout << "Cat meows" << std::endl; }
+  };
+  ```
 - `Open/Closed Principle` – A class should be open for extension but closed for modification, meaning new features should be added without altering existing code.
 - `Single Responsibility Principle` – A class should have only one reason to change, meaning it should have a single responsibility.
 - `Dependency Inversion Principle` – High-level modules should not depend on low-level modules; both should depend on abstractions.
