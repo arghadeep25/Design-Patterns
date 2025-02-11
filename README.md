@@ -142,6 +142,27 @@ Before diving into design patterns, it's essential to understand core object-ori
   };
   ```
 - `Composition Over Inheritance` – Prefer object composition (combining objects) over class inheritance to create flexible and reusable code.
+  ```
+  // Composition: Separate class for behavior
+  class Engine {
+    public:
+      void start() const { std::cout << "Engine started" << std::endl; }
+  };
+
+  // Car uses Engine via composition instead of inheritance
+  class Car {
+    private:
+      std::shared_ptr<Engine> engine;  // Composition
+
+    public:
+      explicit Car(std::shared_ptr<Engine> eng) : engine(std::move(eng)) {}
+
+      void startCar() {
+          engine->start();
+          std::cout << "Car is running" << std::endl;
+      }
+  };
+  ```
 
 
 ### Types of Design Patterns
