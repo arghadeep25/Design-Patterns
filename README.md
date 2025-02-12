@@ -1,4 +1,4 @@
-# Software Design Patterns
+# <p style='color:#ffc95c'>Software Design Patterns</p>
 
 ### <p style='color:orange'>What is a Design Pattern?</p>
 Design Pattern is a reusable solution to a common problem in software design. It provides best practices and guidelines to improve code maintainability, scalability, and flexibility.
@@ -197,18 +197,30 @@ Before diving into design patterns, it's essential to understand core object-ori
 
 - [Behavioral Design Pattern](Behavioral_Design_Pattern/) Deal with object interaction and responsibility distribution, defining how objects communicate while maintaining loose coupling.
   - [Chain of Responsibility](Behavioral_Design_Pattern/Chain%20of%20Responsibility/) A customer submits a request. The request is first checked by a junior support agent. If the junior agent can't resolve it, the request is forwarded to a senior agent. If needed, it goes to the manager. The request is handled by the first capable person in the chain. 
+  
   - [Command](Behavioral_Design_Pattern/Command/) A waiter takes an order (command) from a customer. The order is placed in the kitchen queue. The chef executes the order when ready. The waiter doesn't need to know how the food is prepared, only that the order needs to be executed.
+  
   - [Iterator](Behavioral_Design_Pattern/Iterator/) Playlist on a music streaming app. You can navigate songs one-by-one (sequential access). You don’t need to know how the playlist is stored internally. You can rewind, skip, or loop over the songs easily.
+  
   - [Mediator](Behavioral_Design_Pattern/Mediator/) Imagine an air traffic control (ATC) tower at an airport. Planes (colleagues) do not communicate directly with each other; instead, they send messages to the ATC (mediator), which coordinates takeoffs, landings, and other operations.
+  
   - [Memento](Behavioral_Design_Pattern/Memento/) Before entering a difficult battle, the player saves their game state. If they lose, they can reload the saved state and try again. The player doesn’t need to know how the game internally manages health, inventory, or position—just that the previous state is restored.
+  
   - [Observer](Behavioral_Design_Pattern/Observer/) A YouTuber (Subject) uploads a new video. All Subscribers (Observers) get notified. If someone unsubscribes, they stop receiving updates.
+  
   - [State](Behavioral_Design_Pattern/State/) Traffic Light. It can be red, yellow, or green. When the light changes, its behavior changes accordingly (cars stop, prepare, or go). The light follows a predefined transition between states.
+  
   - [Strategy](Behavioral_Design_Pattern/Strategy/) Navigation app that allows a user to select different transportation modes. Car navigation, Bike navigation, Walking navigation.
+  
   - [Template](Behavioral_Design_Pattern/Template/) Making tea and coffee. Both processes share common steps. Boil water. Brew the drink (tea leaves or coffee grounds). Pour into a cup. Add extras (lemon for tea, milk/sugar for coffee)
+  
   - [Visitor](Behavioral_Design_Pattern/Visitor/) Think of a museum with different types of exhibits. Instead of modifying each exhibit when a new type of visitor (e.g., student, tourist, researcher) comes in, we define a visitor interface that applies different behaviors depending on the visitor type.
 
+
+
 ## <p style='color:orange'>Most Commonly Used</p>
-### <p style='color:green'>Creational Patterns</p>
+
+### <p style='color:orange'>Creational Patterns</p>
 - `Singleton` – Ensures only one instance of a class exists and provides a global access point.
 
 - `Factory Method` – Provides an interface for creating objects in a superclass but allows subclasses to alter the type of objects that will be created.
