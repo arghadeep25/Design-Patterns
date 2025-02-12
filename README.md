@@ -44,7 +44,7 @@ Before diving into design patterns, it's essential to understand core object-ori
   };
   ```
 - `Inheritance` – Enabling a class to acquire properties and behavior from another class.
-  ```
+  ```cpp
   class Animal {
     public:
       void makeSound() const { std::cout << "Animal makes a sound" << std::endl; }
@@ -56,7 +56,7 @@ Before diving into design patterns, it's essential to understand core object-ori
   };
   ```
 - `Polymorphism` – Allowing objects to be treated as instances of their parent type, enabling dynamic behavior.
-  ```
+  ```cpp
   class Animal {
     public:
       virtual void makeSound() const { std::cout << "Animal makes a sound" << std::endl; }
@@ -73,7 +73,7 @@ Before diving into design patterns, it's essential to understand core object-ori
   };
   ```
 - `Open/Closed Principle` – A class should be open for extension but closed for modification, meaning new features should be added without altering existing code.
-  ```
+  ```cpp
   // Base class (Open for extension)
   class Shape {
     public:
@@ -95,7 +95,7 @@ Before diving into design patterns, it's essential to understand core object-ori
   };
   ```
 - `Single Responsibility Principle` – A class should have only one reason to change, meaning it should have a single responsibility.
-  ```
+  ```cpp
   // Class handling user data (Single Responsibility: Managing user details)
   class User {
       std::string name;
@@ -113,7 +113,7 @@ Before diving into design patterns, it's essential to understand core object-ori
   };
   ```
 - `Dependency Inversion Principle` – High-level modules should not depend on low-level modules; both should depend on abstractions.
-  ```
+  ```cpp
   // High-level module (depends on abstraction, not a concrete class)
   class IMessageService {
     public:
@@ -142,7 +142,7 @@ Before diving into design patterns, it's essential to understand core object-ori
   };
   ```
 - `Composition Over Inheritance` – Prefer object composition (combining objects) over class inheritance to create flexible and reusable code.
-  ```
+  ```cpp
   // Composition: Separate class for behavior
   class Engine {
     public:
