@@ -7,7 +7,7 @@ Design Pattern is a reusable solution to a common problem in software design. It
 Before diving into design patterns, it's essential to understand core object-oriented principles:
 
 - `Encapsulation` – Bundling data and methods that operate on the data into a single unit (class), restricting direct access to certain details.
-  ```
+  ```cpp
   class Account {
     private:
       // prevents unintended modification of the data and 
@@ -29,7 +29,7 @@ Before diving into design patterns, it's essential to understand core object-ori
   };
   ```
 - `Abstraction` – Hiding implementation details and exposing only the necessary functionalities.
-  ```
+  ```cpp
   // Abstract class
   class Shape {
     public:
