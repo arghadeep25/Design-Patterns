@@ -1,11 +1,10 @@
 # Software Design Patterns
 
-> ### What is a Design Pattern
+### <p style='color:orange'>What is a Design Pattern?</p>
 Design Pattern is a reusable solution to a common problem in software design. It provides best practices and guidelines to improve code maintainability, scalability, and flexibility.
 
 
-> ### Key Concepts to Know Before Learning Design Patterns
-
+### <p style='color:orange'>Key Concepts to Know Before Learning Design Patterns</p>
 Before diving into design patterns, it's essential to understand core object-oriented principles:
 
 
@@ -75,7 +74,7 @@ Before diving into design patterns, it's essential to understand core object-ori
       void makeSound() const override { std::cout << "Cat meows" << std::endl; }
   };
   ```
-- $\color{orange}{Open/Closed Principle}$ – A class should be open for extension but closed for modification, meaning new features should be added without altering existing code.
+- $\color{orange}{Open\ /Closed\ Principle}$ – A class should be open for extension but closed for modification, meaning new features should be added without altering existing code.
   ```cpp
   // Base class (Open for extension)
   class Shape {
@@ -168,7 +167,7 @@ Before diving into design patterns, it's essential to understand core object-ori
   ```
 
 
-### Types of Design Patterns
+### <p style='color:orange'>Types of Design Patterns</p>
 
 - [Creational Design Pattern](Creational_Design_Pattern/) Focus on object creation mechanisms, ensuring that objects are created in a controlled and efficient manner. They improve code flexibility and reusability.
     - [Abstract Factory Method](Creational_Design_Pattern/Abstract_Factory/) Imagine you’re designing a home automation system that supports different "smart device ecosystems," such as Alexa and Google Home
@@ -208,22 +207,22 @@ Before diving into design patterns, it's essential to understand core object-ori
   - [Template](Behavioral_Design_Pattern/Template/) Making tea and coffee. Both processes share common steps. Boil water. Brew the drink (tea leaves or coffee grounds). Pour into a cup. Add extras (lemon for tea, milk/sugar for coffee)
   - [Visitor](Behavioral_Design_Pattern/Visitor/) Think of a museum with different types of exhibits. Instead of modifying each exhibit when a new type of visitor (e.g., student, tourist, researcher) comes in, we define a visitor interface that applies different behaviors depending on the visitor type.
 
-## Most Commonly Used
-### Creational Patterns
+## <p style='color:orange'>Most Commonly Used</p>
+### <p style='color:green'>Creational Patterns</p>
 - `Singleton` – Ensures only one instance of a class exists and provides a global access point.
 
 - `Factory Method` – Provides an interface for creating objects in a superclass but allows subclasses to alter the type of objects that will be created.
 
 - `Builder` – Separates the construction of a complex object from its representation.
 
-### Structural Patterns
+### <p style='color:orange'>Structural Patterns</p>
 - `Adapter` – Allows incompatible interfaces to work together.
 
 - `Facade` – Provides a simplified interface to a complex subsystem.
 
 - `Decorator` – Dynamically adds behavior to objects without modifying their code.
 
-### Behavioral Patterns
+### <p style='color:orange'>Behavioral Patterns</p>
 - `Observer` – Defines a dependency between objects so that when one changes state, all its dependents are notified.
 
 - `Strategy` – Allows selecting an algorithm's behavior at runtime.
