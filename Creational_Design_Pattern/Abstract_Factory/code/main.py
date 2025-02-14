@@ -70,7 +70,7 @@ class AlexaDeviceFactory(SmartHomeFactory):
 
 
 # Client Code
-def create_factory(factory: SmartHomeFactory) -> None:
+def use_smart_home(factory: SmartHomeFactory) -> None:
     speaker = factory.create_speaker()
     light = factory.create_light()
     print(speaker.play_music())
@@ -79,10 +79,10 @@ def create_factory(factory: SmartHomeFactory) -> None:
 
 def main():
     print("Testing Google Speaker and Light")
-    create_factory(GoogleDeviceFactory())
+    use_smart_home(GoogleDeviceFactory())
 
     print("Testing Alexa Speaker and Light")
-    create_factory(AlexaDeviceFactory())
+    use_smart_home(AlexaDeviceFactory())
 
 
 if __name__ == "__main__":
