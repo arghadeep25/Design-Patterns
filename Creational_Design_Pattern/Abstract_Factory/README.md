@@ -30,10 +30,50 @@ SmartDeviceFactory (Abstract Factory)
            |--> NestSpeaker (Concrete Product - SmartSpeaker)
            |--> GoogleLight (Concrete Product - SmartLight)
 ```
+### Components
+- Abstract Factory (SmartHomeFactory) – Declares creation methods for each product type.
+- Concrete Factories (GoogleDeviceFactory, AlexaDeviceFactory) – Implement product creation for a specific brand.
+- Abstract Products (SmartSpeaker, SmartLight) – Define the interface for products.
+- Concrete Products (NestSpeaker, GoogleLight, etc.) – Actual implementations of the products.
+- Client (use_smart_home) – Uses the factory to create and use objects without knowing the exact class.
 
 ### Problem
+- In large systems, objects often belong to families (e.g., GUI toolkits, smart home devices, etc.).
+- Directly instantiating concrete classes leads to tight coupling, making it hard to switch between different product families.
+- We need a way to create objects that belong together without hardcoding class dependencies.
+
 
 ### Solution
+- Define an Abstract Factory that provides an interface for creating related objects.
+- Implement multiple Concrete Factories, each producing a family of related objects.
+- The client only interacts with the factory interface, ensuring flexibility and scalability.
+
+```
+                          +-----------------------+
+                          |   SmartHomeFactory    | (Abstract Factory)
+                          |-----------------------|
+                          | + create_speaker()    |
+                          | + create_light()      |
+                          +-----------+-----------+
+                                      |
+            --------------------------------------------------
+            |                                                |
+         +----------------------+                 +----------------------+
+         |   BrandAFactory      |                 |   BrandBFactory      |
+         |----------------------|                 |----------------------|
+         | + create_speaker()   |                 | + create_speaker()   |
+         | + create_light()     |                 | + create_light()     |
+         +----------+-----------+                 +----------+-----------+
+                    |                                        |
+         ----------------------                     ----------------------
+         |                    |                     |                    |
++-----------------+   +-----------------+   +-----------------+ +---------------+
+| BrandASpeaker   |   | BrandALight     |   | BrandBSpeaker   | | BrandBLight   |
+|-----------------|   |-----------------|   |-----------------| |---------------|
+| + play_music()  |   | + turn_on()     |   | + play_music()  | | + turn_on()   |
++-----------------+   +-----------------+   +-----------------+ +---------------+
+
+```
 
 ### Advantages
 - Avoid tight coupling between concrete products and client code.
@@ -41,4 +81,5 @@ SmartDeviceFactory (Abstract Factory)
 - You can introduce new variants of products without breaking existing client code.
 
 ### Disadvantages
-The code may become more complicated than it should be, since a lot of new interfaces and classes are introduced along with the pattern.
+- Complexity – Requires multiple factory classes, increasing initial setup effort.
+- Difficult to Extend Individual Products – If you want to add a new product without modifying the factory, it can be challenging.
