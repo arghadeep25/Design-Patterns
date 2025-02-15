@@ -98,7 +98,7 @@ class ConstructionDirector:
 
     def build_house(self) -> None:
         self.house_builder.build_walls()
-        self.house_builder.build_roof
+        self.house_builder.build_roof()
         self.house_builder.build_doors()
         self.house_builder.build_windows()
 
