@@ -2,7 +2,7 @@ from abc import ABC, abstractmethod
 from typing import List
 
 
-# Mediator Interface
+# Mediator Class
 class ChatMediator(ABC):
     @abstractmethod
     def add_user(self, user: "User") -> None:
@@ -13,14 +13,14 @@ class ChatMediator(ABC):
         pass
 
 
-# Concrete User
+# Colleague (Base) class
 class User:
     def __init__(self, mediator: ChatMediator, name: str) -> None:
-        self.mediator: ChatMediator = mediator
-        self.name: str = name
+        self.mediator = mediator
+        self.name = name
 
     def send(self, message: str) -> None:
-        print(f"{self.name} sends: {message}")
+        print(f"{self.name} : {message}")
         self.mediator.send_message(message, self)
 
     def receive(self, message: str, sender_name: str) -> None:
@@ -32,7 +32,7 @@ class ChatRoom(ChatMediator):
     def __init__(self) -> None:
         self.users: List[User] = []
 
-    def add_user(self, user: User) -> None:
+    def add_user(self, user) -> None:
         self.users.append(user)
 
     def send_message(self, message: str, sender: User) -> None:
@@ -41,21 +41,20 @@ class ChatRoom(ChatMediator):
                 user.receive(message, sender.name)
 
 
-def main() -> None:
+# Client Interface
+def main():
     chat_room = ChatRoom()
-
-    alice = User(chat_room, "Alice")
-    bob = User(chat_room, "Bob")
-    charlie = User(chat_room, "Charlie")
+    alice = User(chat_room, "alice")
+    bob = User(chat_room, "bob")
+    charlie = User(chat_room, "charlie")
 
     chat_room.add_user(alice)
     chat_room.add_user(bob)
     chat_room.add_user(charlie)
 
-    print()
-    alice.send("Hello everyone!")
-    print()
-    bob.send("Hello Alice!")
+    alice.send("hello everyone")
+    bob.send("hello alice")
+
 
 if __name__ == "__main__":
     main()
