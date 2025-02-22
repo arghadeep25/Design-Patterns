@@ -1,0 +1,48 @@
+@startuml
+
+skinparam TitleFontSize 16
+title "Factory Pattern UML Diagram"
+
+abstract Transport{
+    + deliver() : void
+}
+
+class Truck{
+    + deliver() : void
+}
+
+class Plane{
+    + deliver() : void
+}
+
+class Ship{
+    + deliver() : void
+}
+
+abstract class Logistics{
+    + plan_delivery(): Transport
+}
+
+class RoadLogistics{
+    + plan_delivery() : Transport
+}
+
+class AirLogistics{
+    + plan_delivery() : Transport
+}
+
+class SeaLogistics{
+    + plan_delivery() : Transport
+}
+
+Transport <|-- Truck
+Transport <|-- Plane
+Transport <|-- Ship
+
+Logistics <|-- RoadLogistics
+Logistics <|-- AirLogistics
+Logistics <|-- SeaLogistics
+
+Logistics *-- Transport : "creates"
+
+@enduml
