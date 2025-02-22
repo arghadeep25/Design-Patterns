@@ -48,32 +48,11 @@ SmartDeviceFactory (Abstract Factory)
 - Implement multiple Concrete Factories, each producing a family of related objects.
 - The client only interacts with the factory interface, ensuring flexibility and scalability.
 
-```
-                          +-----------------------+
-                          |   SmartHomeFactory    | (Abstract Factory)
-                          |-----------------------|
-                          | + create_speaker()    |
-                          | + create_light()      |
-                          +-----------+-----------+
-                                      |
-            --------------------------------------------------
-            |                                                |
-         +----------------------+                 +----------------------+
-         |   BrandAFactory      |                 |   BrandBFactory      |
-         |----------------------|                 |----------------------|
-         | + create_speaker()   |                 | + create_speaker()   |
-         | + create_light()     |                 | + create_light()     |
-         +----------+-----------+                 +----------+-----------+
-                    |                                        |
-         ----------------------                     ----------------------
-         |                    |                     |                    |
-+-----------------+   +-----------------+   +-----------------+ +---------------+
-| BrandASpeaker   |   | BrandALight     |   | BrandBSpeaker   | | BrandBLight   |
-|-----------------|   |-----------------|   |-----------------| |---------------|
-| + play_music()  |   | + turn_on()     |   | + play_music()  | | + turn_on()   |
-+-----------------+   +-----------------+   +-----------------+ +---------------+
+### UML Diagram
 
-```
+<p align="center">
+  <img src="../../out/Creational_Design_Pattern/Abstract_Factory/abstract_factory/abstract_factory.png" />
+</p>
 
 ### Advantages
 - Avoid tight coupling between concrete products and client code.
