@@ -1,0 +1,33 @@
+@startuml
+
+skinparam TitleFontSize 16
+title "Prototype Pattern UML Diagram"
+
+abstract class Shape{
+    +clone(): Shape
+    +draw(): void
+}
+
+class Circle{
+    +Circle(in color: string)
+    +clone(): Shape
+    -color : string
+}
+
+class Rectangle{
+    +Rectangle(in color: string)
+    +clone(): Shape
+    -color : string
+}
+
+class Square{
+    +Square(in color: string)
+    +clone(): Shape
+    -color : string
+}
+
+Shape <|-- Circle
+Shape <|-- Rectangle
+Shape <|-- Square
+
+@enduml
