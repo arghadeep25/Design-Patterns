@@ -31,27 +31,10 @@ Instead of instantiating a new object, the prototype pattern allows cloning an e
 - This method creates a shallow or deep copy of the object.
 - The cloned object can then be modified as needed without affecting the original.
 
-
-```
-+--------------------+
-|     Prototype      |<--------------------+
-|--------------------|                     |
-|+ clone():Prototype |                     |
-+--------------------+                     |
-          ^                                |
-          | Implements                     |
-+--------------------+        +--------------------+
-| ConcretePrototype1 |        | ConcretePrototype2 |
-|--------------------|        |--------------------|
-|+ clone(): Prototype|        |+ clone():Prototype |
-+--------------------+        +--------------------+
-          ^                                ^
-          | Uses                           | Uses
-          +--------------------------------+
-                         Client
-
-
-```
+### UML Diagram
+<p align="center">
+  <img src="../../out/Creational_Design_Pattern/Prototype/prototype/prototype.png" />
+  </p>
 
 ### Advantages 
 
