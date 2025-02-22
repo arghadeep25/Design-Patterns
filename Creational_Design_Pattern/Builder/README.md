@@ -27,39 +27,10 @@ We want to build different types of houses (e.g., a wooden house, a stone house)
 - ConstructionDirector: It directs the building process, ensuring the house is built using the appropriate steps (walls, roof, doors, and windows).
 - Client: The client asks the director to construct the house without knowing how each part is built. The director uses the builder to assemble the house.
 
-
-```
-          +------------------------+
-          |  ConstructionDirector  |
-          +------------------------+
-                    |
-                    | Uses
-                    v
-          +----------------+
-          | HouseBuilder   |<---------------------+
-          | (Abstract)     |                      |
-          +----------------+                      |
-                    ^                             |
-                    | Implements                  |
-     +-------------------------------+            |
-     |                               |            |
-+-------------------+       +-------------------+ |
-|   WoodenBuilder   |       |    OtherBuilder   | |
-+-------------------+       +-------------------+ |
-          |                                    |
-          +------------------------------------+
-                             |
-                             v
-                   +----------------+
-                   |     House      |
-                   +----------------+
-                   |  - walls       |
-                   |  - roof        |
-                   |  - doors       |
-                   |  - windows     |
-                   +----------------+
-
-```
+### UML Diagram
+<p align="center">
+  <img src="../../out/Creational_Design_Pattern/Builder/builder/builder.png" />
+</p>
 
 ### Advantages
 - You can construct objects step-by-step, defer construction steps or run steps recursively.
