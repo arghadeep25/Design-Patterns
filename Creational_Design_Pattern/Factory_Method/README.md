@@ -21,6 +21,11 @@ We need a way to create transport objects without hardcoding the transport type 
 
 We define a base class (Logistics) with a factory method (createTransport) that must be implemented by subclasses. The subclasses will determine which specific transport to create.
 
+### UML Diagram
+<p align="center">
+  <img src="../../out/Creational_Design_Pattern/Factory_Method/factory/factory.png" />
+</p>
+
 ### Advantages
 
 - Avoids tight coupling between creator and the concrete products.
