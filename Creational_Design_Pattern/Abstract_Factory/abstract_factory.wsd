@@ -1,0 +1,62 @@
+@startuml
+
+' skinparam ClassFontColor Black
+' skinparam ClassFontSize 12
+skinparam DefaultFontSize 12
+skinparam TitleFontSize 16
+
+title "Abstract Factory UML Diagram"
+
+interface SmartSpeaker {
+    +playMusic() : void
+}
+
+interface SmartLight {
+    +turnOn() : void
+}
+
+interface SmartDeviceFactory {
+    +createSpeaker() : SmartSpeaker
+    +createLight() : SmartLight
+}
+
+class AlexaLight{
+    +turnOn() : void
+}
+
+class GoogleLight{
+    +turnOn() : void
+}
+
+class EchoSpeaker{
+    +playMusic() : void
+}
+
+class NestSpeaker{
+    +playMusic() : void
+}
+
+class AlexaDeviceFactory{
+    +createSpeaker() : AlexaSpeaker
+    +createLight() : AlexaLight
+}
+
+class GoogleDeviceFactory{
+    +createSpeaker() : NestSpeaker
+    +createLight() : GoogleLight
+}
+
+class AlexaDeviceFactory implements SmartDeviceFactory
+class GoogleDeviceFactory implements SmartDeviceFactory
+
+class EchoSpeaker implements SmartSpeaker
+class NestSpeaker implements SmartSpeaker
+class AlexaLight implements SmartLight
+class GoogleLight implements SmartLight
+
+AlexaDeviceFactory --> EchoSpeaker : "creates"
+AlexaDeviceFactory --> AlexaLight : "creates"
+GoogleDeviceFactory --> NestSpeaker : "creates"
+GoogleDeviceFactory --> GoogleLight : "creates"
+
+@enduml
