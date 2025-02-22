@@ -1,0 +1,53 @@
+@startuml
+
+skinparam TitleFontSize 16
+title "Builder Pattern UML Diagram"
+
+class House {
+    - string walls
+    - string roof
+    - string doors
+    - string windows
+    + setWalls(in material: string): void
+    + setDoors(in door: string): void
+    + setWindows(in windows: string): void
+    + setRoof(in roof: string): void
+    + show(): void
+}
+
+abstract class HouseBuilder {
+    + buildWalls(): void
+    + buildRoof(): void
+    + buildDoors(): void
+    + buildWindows(): void
+    + getHouse(): House
+}
+
+class WoodenBuilder {
+    + buildWalls(): void
+    + buildRoof(): void
+    + buildDoors(): void
+    + buildWindows(): void
+    + getHouse(): House
+}
+
+class StoneBuilder {
+    + buildWalls(): void
+    + buildRoof(): void
+    + buildDoors(): void
+    + buildWindows(): void
+    + getHouse(): House
+}
+
+class ConstructionDirector {
+    + constructHouse(): void
+    - houseBuilder: HouseBuilder
+}
+
+HouseBuilder <|-- WoodenBuilder
+HouseBuilder <|-- StoneBuilder
+
+HouseBuilder *-- House : "builds"
+ConstructionDirector *-- HouseBuilder : "uses"
+
+@enduml
