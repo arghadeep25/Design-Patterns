@@ -21,6 +21,11 @@ The Composite Pattern allows us to treat both files and folders the same way by 
 
 This way, we can apply operations like showDetails() uniformly, whether it's a file or a folder.
 
+### UML Diagram
+<p align="center">
+  <img src="../../out/Structural_Design_Pattern/Composite/composite/composite.png">
+</p>
+
 ### Advantages
 - Uniformity: Clients can treat files and folders consistently.
 - Extensibility: New file types or folders can be added without changing existing code.
