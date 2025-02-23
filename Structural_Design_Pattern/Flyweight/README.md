@@ -28,31 +28,11 @@ A game engine needs to render thousands of trees in a large open-world game.
 - Keep unique data (position, scale) separate.
 - The Flyweight Factory ensures that trees with the same type reuse the same shared object instead of creating new ones.
 
-```
-        Client
-          │
-          ▼
-┌────────────────────┐
-│  FlyweightFactory  │
-│────────────────────│
-│ + getTreeType()    │
-└─────────┬──────────┘
-          │
- ┌────────┴────────┐
- │    TreeType     │  <<Flyweight>>
- │─────────────────│
- │   + render()    │
- └────────┬────────┘
-          │
- ┌────────┴─────────────┐
- │       Tree           │  <<UnsharedFlyweight>>
- │──────────────────────│
- │ - x, y               │
- │ - treeType: TreeType │
- │ + draw()             │
- └──────────────────────┘
-```
+### UML Diagram
 
+<p align="center">
+  <img src="../../out/Structural_Design_Pattern/Flyweight/flyweight/flyweight.png">
+</p>
 ### Advantages
 - Reduces Memory Usage : Avoids duplicate storage of identical data.
 - Improves Performance : Speeds up rendering and object management.
