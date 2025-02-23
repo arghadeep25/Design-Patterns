@@ -21,7 +21,7 @@ To extend the support for .mp4 and .vlc which are using AdvancedMediaPlayer, the
 The MediaAdapter class is created in order to act as a bridge between MediaPlayer and AdvancedMediaPlayer. 
 
 ### UML Diagram
-<p>
+<p align="center">
   <img src="../../out/Structural_Design_Pattern/Adapter/adapter/adapter.png">
 </p>
 
