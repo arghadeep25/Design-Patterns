@@ -20,38 +20,10 @@ To extend the support for .mp4 and .vlc which are using AdvancedMediaPlayer, the
 ### Solution 
 The MediaAdapter class is created in order to act as a bridge between MediaPlayer and AdvancedMediaPlayer. 
 
-```
-+------------------+                +------------------------+
-|   MediaPlayer    |                |   AdvancedMediaPlayer  |
-|------------------|                |------------------------|
-|+ play(file):void |                | + playMp4(file):void   |
-|                  |                | + playVlc(file):void   |
-+------------------+                +------------------------+
-         ^                                ^               ^
-         |                                |               |
-+-----------------+         +-------------------+    +-------------------+
-|  AudioPlayer    |         |     Mp4Player     |    |     VlCPlayer     |
-|-----------------|         |-------------------|    |-------------------|
-|+play(file):void |         |+playMp4(file):void|    |+playVlc(file):void|
-+-----------------+         +-------------------+    +-------------------+
-         |
-         | (Incompatible interfaces)
-         |
-+--------------------+
-|   MediaAdapter     |
-|--------------------|
-| - adaptee          |  (AdvancedMediaPlayer*)
-| + play(file):void  |
-+--------------------+
-         ^
-         |
-+-------------------+
-|   Client Code     |
-|-------------------|
-| Uses AudioPlayer  |
-+-------------------+
-
-```
+### UML Diagram
+<p>
+  <img src="../../out/Structural_Design_Pattern/Adapter/adapter/adapter.png">
+</p>
 
 ### Advantages
 - Single Responsibility Principle. You can separate the interface or data conversion code from the primary business logic of the program.
