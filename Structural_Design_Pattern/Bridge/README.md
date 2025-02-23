@@ -36,44 +36,11 @@ To make it compatible, we have to make another two classes CircleOpenGL, CircleD
 ### Solution
 To avoid the exploding class problem, the bridge pattern is applied. This decouples the abstraction (Shape) from the implementation (Renderer). Instead of creating subclasses for each combination, separate Renderer hierarchy is introduced, allowing independent extension of both hierarchies.  
 
-```
-Abstraction (High-level control)
-+-----------------------+
-| Shape                 |
-| --------------------- |
-| - renderer: Renderer* |
-| + draw(): void        |
-+-----------------------+
-        ^
-        |
-+------------------+      +------------------+
-| Circle |  | Square |
-| ------ ||------------------|
-| + draw(): void   |      | + draw(): void   |
-+------------------+      +------------------+
+### UML Diagram
+<p align="center">
+  <img src="../../out/Structural_Design_Pattern/Bridge/bridge/bridge.png">
+</p>
 
-Implementation (Platform-specific details)
-+------------------+
-| Renderer         |
-| ---------------- |
-| + render(): void |
-+------------------+
-        ^
-        |
-+------------------+      +------------------+
-| OpenGLRenderer |  | DirectXRenderer |
-| -------------- ||------------------|
-| + render(): void |      | + render(): void |
-+------------------+      +------------------+
-
-Client Code
-+------------------+
-| Application |
-| ----------- |
-| Uses Shape  |
-+------------------+
-
-```
 ### Advantages
 - Platform independent classes and apps
 - Client code works well with high level abstractions. Not exposed to platform details.
