@@ -28,31 +28,11 @@ A video streaming application loads large video files from the disk.
 - If available, it returns the cached version, reducing load time.
 - This improves performance, efficiency, and user experience.
 
-```
-       Client
-         │
-         ▼
-┌───────────────────┐
-│      Subject      │
-│───────────────────│
-│  + play()         │
-└────────┬──────────┘
-         │
- ┌───────┴────────┐
- │    ProxyVideo  │  <<Proxy>>
- │────────────────│
- │ - cache        │
- │ + play()       │
- └───────┬────────┘
-         │
- ┌───────┴────────┐
- │  RealVideo     │  <<RealSubject>>
- │────────────────│
- │ - filename     │
- │ + play()       │
- └────────────────┘
+### UML Diagram
 
-```
+<p align="center">
+  <img src="../../out/Structural_Design_Pattern/Proxy/proxy/proxy.png">
+</p>
 
 ### Advantages
 - Controls Access – Adds security, authentication, and logging.
