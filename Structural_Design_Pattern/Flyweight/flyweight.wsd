@@ -1,0 +1,30 @@
+@startuml
+
+skinparam TitleFontSize 16
+title "Flyweight Pattern UML Diagram"
+
+class TreeType{
+    -name : string
+    -color : string
+    -texture : string
+    +TreeType(in name: string, in color: string, in texture: string)
+    +render(in x: int, in y: int)
+}
+
+class TreeFactory{
+    -tree_types: unordered_map<string, TreeType>
+    +get_tree_type(in name: string, in color: string, in texture: string) : TreeType
+}
+
+class Tree{
+    -x : int
+    -y : int
+    -type : TreeType
+    +Tree(in x : int, in y : int, in type : TreeType)
+    +draw() : void
+}
+
+Tree o-- TreeType
+TreeFactory o-- TreeType
+
+@enduml
