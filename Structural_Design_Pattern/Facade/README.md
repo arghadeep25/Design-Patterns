@@ -31,37 +31,11 @@ Introduce a Facade Class (MoviePlayer) that encapsulates all the complex operati
 - The client only calls playMovie(), and the Facade handles everything internally.
 - The subsystem classes still exist, but the client doesn’t need to interact with them directly.
 
-```
-               Client
-                 │
-                 ▼
-        ┌───────────────────┐
-        │    MoviePlayer    │  <<Facade>>
-        │───────────────────│
-        │ + playMovie()     │
-        └────────┬──────────┘
-                 │
- ┌───────────────┴──────────────────┐
- │        Subsystem Components      │
- │ ┌──────────────────────────────┐ │
- │ │ VideoDecoder                 │ │
- │ │ + decodeVideo()              │ │
- │ └──────────────────────────────┘ │
- │ ┌──────────────────────────────┐ │
- │ │ AudioProcessor               │ │
- │ │ + processAudio()             │ │
- │ └──────────────────────────────┘ │
- │ ┌──────────────────────────────┐ │
- │ │ SubtitleLoader               │ │
- │ │ + loadSubtitles()            │ │
- │ └──────────────────────────────┘ │
- │ ┌──────────────────────────────┐ │
- │ │ DRMChecker                   │ │
- │ │ + checkDRM()                 │ │
- │ └──────────────────────────────┘ │
- └──────────────────────────────────┘
+### UML Diagram
 
-```
+<p align="center">
+  <img src="../../out/Structural_Design_Pattern/Facade/facade/facade.png">
+</p>
 
 ### Advantages
 - Simplifies Usage : Clients interact with a single, easy-to-use interface.
