@@ -1,0 +1,36 @@
+@startuml
+
+skinparam TitleFontSize 16
+title "Facade Pattern UML Diagram"
+
+class VideoDecoder{
+    +decode() : void
+}
+
+class AudioProcessor{
+    +process() : void
+}
+
+class SubtitleLoader{
+    +load() : void
+}
+
+class DRMChecker{
+    +check() : void
+}
+
+class MoviePlayer{
+    -video_decoder_ptr: VideoDecoder
+    -audio_processor_ptr : AudioProcessor
+    -sub_loader_ptr : SubtitleLoader
+    -drm_checker_ptr : DRMChecker
+    +MoviePlayer()
+    +play() : void
+}
+
+MoviePlayer *-- VideoDecoder
+MoviePlayer *-- AudioProcessor
+MoviePlayer *-- SubtitleLoader
+MoviePlayer *-- DRMChecker
+
+@enduml
