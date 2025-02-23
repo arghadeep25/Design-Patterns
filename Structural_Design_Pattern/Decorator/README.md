@@ -31,40 +31,10 @@ We use the Decorator Pattern to wrap the TextEditor with additional functionalit
 - We create decorator classes (SpellChecker, GrammarChecker, etc.) that wrap around TextEditor to extend its behavior.
 - Each decorator modifies the output without altering the original class.
 
-```
-                 ┌───────────────────┐
-                 │   TextEditor      │  <<Interface>>
-                 │───────────────────│
-                 │ + writeText()     │
-                 └────────┬──────────┘
-                          │
-                          │
-          ┌───────────────┴────────────────┐
-          │                                │
- ┌───────────────────┐          ┌──────────────────────┐
- │ BasicTextEditor   │          │ TextEditorDecorator  │  <<Abstract Class>>
- │───────────────────│          │──────────────────────│
- │ + writeText()     │◄─────────┤ + writeText()        │
- └───────────────────┘          │ - editor:TextEditor* │
-                                └───────────┬──────────┘
-                                            │
-                     ┌──────────────────────┴────────────────────────┐
-                     │                                               │
-       ┌───────────────────┐                      ┌───────────────────┐
-       │ SpellChecker      │                      │ GrammarChecker    │
-       │───────────────────│                      │───────────────────│
-       │ + writeText()     │                      │ + writeText()     │
-       └───────────────────┘                      └───────────────────┘
-                     │                                               │
-                     └───────────────────────────────────────────────┘
-                                           │
-                              ┌───────────────────┐
-                              │ AutoSuggest       │
-                              │───────────────────│
-                              │ + writeText()     │
-                              └───────────────────┘
-
-```
+### UML Diagram
+<p align="center">
+  <img src="../../out/Structural_Design_Pattern/Decorator/decorator/decorator.png">
+</p>
 
 ### Advantages 
 - Extensibility : New features can be added without modifying existing code.
