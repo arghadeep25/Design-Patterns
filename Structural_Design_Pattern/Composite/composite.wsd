@@ -1,0 +1,29 @@
+@startuml
+
+skinparam TitleFontSize 16
+title "Composite Pattern UML Diagram"
+
+abstract FileSystemComponent{
+    +show_details(): void
+}
+
+class File{
+    +File(in name: string)
+    -name : string
+    +show_details(): void
+}
+
+class Folder{
+    +Folder(in name: string)
+    +show_details(): void
+    +add(in component: FileComponentSystem): void
+    -name : string
+    - children: vector<FileComponentSystem>
+}
+
+FileSystemComponent <|-- File
+FileSystemComponent <|-- Folder
+
+Folder *-- "0..*" FileSystemComponent
+
+@enduml
