@@ -1,0 +1,48 @@
+@startuml
+
+skinparam TitleFontSize 16
+title "Adapter Pattern UML Diagram"
+
+abstract MediaPlayer{
+    +play() : void
+}
+
+abstract AdvancedMediaPlayer{
+    +playMp4(in filename: string): void
+    +playVLC(in filename: string) : void
+}
+
+class Mp4Player{
+    +playMp4(in filename: string) : void
+    +playVLC(in filename: string) : void
+}
+
+class VLCPlayer{
+    +playMp4(in filename: string) : void
+    +playVLC(in filename: string) : void
+}
+
+
+class MediaAdapter{
+    +MediaAdapter(in mediaType: string)
+    +play(in filename: string): void
+    -mediaType: string
+    -advancedPlayer: AdvancedMediaPlayer
+}
+
+class AudioPlayer{
+    +play() : void
+    -adapter: MediaAdapter
+}
+
+AdvancedMediaPlayer <|--Mp4Player
+AdvancedMediaPlayer <|--VLCPlayer
+
+MediaAdapter *-- AdvancedMediaPlayer
+AudioPlayer *-- MediaAdapter
+
+MediaPlayer <|-- MediaAdapter
+MediaPlayer <|-- AudioPlayer
+
+
+@enduml
