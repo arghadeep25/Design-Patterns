@@ -1,0 +1,28 @@
+@startuml
+
+skinparam TitleFontSize 16
+title "Proxy Pattern UML Diagram"
+
+interface Video <<interface>> {
+    +play() : void
+}
+
+class RealVideo{
+    -name : string
+    -load_from_disk() : void
+    +RealVideo(in file: string)
+    +play() : void
+}
+
+class ProxyVideo{
+    -filename : string
+    -real_video_ptr : RealVideo
+    +ProxyVideo(in filename: string)
+    +play() : void
+}
+
+class RealVideo implements Video
+class ProxyVideo implements Video
+ProxyVideo *-- RealVideo
+
+@enduml
