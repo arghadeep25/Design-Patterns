@@ -1,0 +1,45 @@
+@startuml
+
+skinparam TitleFontSize 16
+title "Decorator Pattern UML Diagram"
+
+abstract TextEditor{
+    +write() : void
+}
+
+class BasicTextEditor{
+    +write() : void
+}
+
+class TextEditorDecorator{
+    #editor_ptr : TextEditor
+    +TextEditorDecorator(in editor: TextEditor)
+    +write() : void
+}
+
+class SpellChecker{
+    +write() : void
+}
+
+class GrammarCheck{
+    +write() : void
+}
+
+class AutoSuggest{
+    +write() : void
+}
+
+TextEditor <|-- BasicTextEditor
+TextEditor <|-- TextEditorDecorator
+TextEditorDecorator *-- TextEditor
+
+
+TextEditorDecorator <|-- SpellChecker
+TextEditorDecorator <|-- GrammarCheck
+TextEditorDecorator <|-- AutoSuggest
+
+
+
+
+
+@enduml
