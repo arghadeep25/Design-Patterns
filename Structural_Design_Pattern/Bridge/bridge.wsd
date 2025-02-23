@@ -1,0 +1,49 @@
+@startuml
+
+skinparam TitleFontSize 16
+title "Bridge Pattern UML Diagram"
+
+abstract Renderer{
+    +render_shape(in shape: string) : void
+}
+
+class OpenGLRenderer{
+    +render_shape(in shape: string) : void
+}
+
+class DirectXRenderer{
+    +render_shape(in shape: string) : void
+}
+
+abstract Shape{
+    +Shape(in renderer: Renderer)
+    +draw() : void
+    #renderer_ptr : Renderer
+}
+
+class Rectangle{
+    +Shape(in renderer: Renderer)
+    +draw() : void
+}
+
+class Square{
+    +Shape(in renderer: Renderer)
+    +draw() : void
+}
+
+class Circle{
+    +Shape(in renderer: Renderer)
+    +draw() : void
+}
+
+Renderer <|-- OpenGLRenderer
+Renderer <|-- DirectXRenderer
+
+Shape <|-- Rectangle
+Shape <|-- Square
+Shape <|-- Circle
+
+Renderer *-- Shape
+
+
+@enduml
