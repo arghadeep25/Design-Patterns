@@ -1,0 +1,43 @@
+@startuml
+
+skinparam TitleFontSize 16
+title "Command UML Diagram"
+
+class Light{
+    +turn_on() : void
+    +turn_off() : void
+}
+
+abstract class Command{
+    +execute() : void
+}
+
+class TurnONCommand{
+    -light_ptr : Light
+    +TurnONCommand(in light: Light)
+    +execute() : void
+}
+
+class TurnOFFCommand{
+    -light_ptr : Light
+    +TurnOFFCommand(in light: Light)
+    +execute() : void
+}
+
+class RemoteControl{
+    -command_ptrs : vector<Command>
+    +set_command(in command: Command) : void
+    +press_button() : void
+}
+
+
+Command <|-- TurnONCommand
+Command <|-- TurnOFFCommand
+
+TurnONCommand *-- Light
+TurnOFFCommand *-- Light
+
+RemoteControl *-- Command
+
+
+@enduml
