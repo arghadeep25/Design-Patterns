@@ -22,24 +22,10 @@ Directly invoking operations on objects can lead to tight coupling, making it ha
 ### Solution
 Decouple the sender and receiver by encapsulating actions as command objects. The invoker can execute, queue, or log commands flexibly.
 
-```
-+-----------------+
-|  Command        |
-|-----------------|<------------------ Client
-| +execute()      |
-+-----------------+
-       ▲
-       │
-+-------------------+       +-----------------+
-| ConcreteCommand1  | ----> |  Receiver       |
-+-------------------+       +-----------------+
-       ▲
-       │
-+-----------------+
-|  Invoker        |
-+-----------------+
-
-```
+### UML Diagram
+<p align="center">
+  <img src="../../out/Behavioral_Design_Pattern/Command/command/command.png">
+</p>
 
 ### Advantages
 - Decouples sender and receiver, making code more modular.
