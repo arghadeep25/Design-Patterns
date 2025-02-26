@@ -1,0 +1,31 @@
+@startuml
+
+skinparam TitleFontSize 16
+title "Chain of Responsibility"
+
+abstract class Handler <<interface>>{
+    -next: Handler
+    +set_next(in next_handler: Handler) : void
+    +handle_request(in level: int) : void
+}
+
+class JuniorSupport{
+    +handle_request(in level: int) : void
+}
+class SeniorSupport{
+    +handle_request(in level: int) : void
+}
+
+class ManagerSupport{
+    +handle_request(in level: int) : void
+}
+
+JuniorSupport <|-- Handler
+SeniorSupport <|-- Handler
+ManagerSupport <|-- Handler
+
+Handler o-- Handler : next
+
+
+
+@enduml
