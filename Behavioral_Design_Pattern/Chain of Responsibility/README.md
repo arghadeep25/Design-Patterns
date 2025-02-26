@@ -22,20 +22,10 @@ A system needs to process requests dynamically based on availability, priority, 
 ### Solution
 Implement a chain of handlers where each one decides whether to process the request or pass it to the next. This reduces coupling and improves scalability.
 
-```
-+-----------------+
-|  Handler        |
-|-----------------|<------------------ Client
-| +setNext()      |
-| +handle()       |
-+-----------------+
-       ▲
-       │
-+-----------------+        +-----------------+
-| ConcreteHandler1|  ----> | ConcreteHandler2|
-+-----------------+        +-----------------+
-
-```
+### UML Diagram
+<p align="center">
+  <img src="../../out/Behavioral_Design_Pattern/Chain of Responsibility/chain_of_responsibility/chain_of_responsibility.png">
+</p>
 
 ### Advantages
 - Decouples sender and receiver.
