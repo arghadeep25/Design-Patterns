@@ -1,7 +1,7 @@
 fail_fast: false
 repos:
   - repo: https://github.com/pre-commit/pre-commit-hooks
-    rev: v4.6.0
+    rev: v5.0.0
     hooks:
       - id: check-added-large-files
       - id: check-case-conflict
@@ -37,7 +37,7 @@ repos:
 
   # Google Clang-Format for C++ code formatting
   - repo: https://github.com/pocc/pre-commit-hooks
-    rev: master
+    rev: v1.3.5
     hooks:
       - id: clang-format
         args: [-style=Google, -i]
@@ -46,7 +46,7 @@ repos:
 
   # Commit message linting using Conventional Commits
   - repo: https://github.com/commitizen-tools/commitizen
-    rev: v3.9.0
+    rev: v4.2.2
     hooks:
       - id: commitizen
         stages: [commit-msg]
