@@ -21,31 +21,11 @@ Collections (like arrays, linked lists, and trees) have different structures. If
 ### Solution
 The Iterator pattern abstracts the traversal logic into a separate class, so the collection's internal structure remains hidden from the client.
 
-```
-+-------------------+          +---------------------+
-|   Iterable        |          |  Iterator           |
-|-------------------|<>------->|---------------------|
-| +createIterator() |          | +hasNext()          |
-+------------------+           | +next()             |
-                               +---------------------+
-                                          ▲
-                                          │
-                               +---------------------+
-                               | ConcreteIterator    |
-                               |---------------------|
-                               | -collection         |
-                               | -position           |
-                               +---------------------+
-                                         ▲
-                                         │
-                              +----------------------+
-                              |  ConcreteCollection  |
-                              |----------------------|
-                              | -items               |
-                              | +createIterator()    |
-                              +----------------------+
+### UML Diagram
 
-```
+<p align="center">
+  <img src="../../out/Behavioral_Design_Pattern/Iterator/iterator/iterator.png">
+</p>
 
 ### Advantages
 - Encapsulates iteration logic, making it reusable.
