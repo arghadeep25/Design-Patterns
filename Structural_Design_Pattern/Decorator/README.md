@@ -21,7 +21,7 @@ A text editor allows users to write text. Over time, users want additional featu
 - spell checking
 - grammar checking
 - auto-suggestions
-  
+
 Instead of modifying the core text editor class (which violates the Open-Closed Principle), we need a way to dynamically add these features without modifying the existing code.
 
 ### Solution
@@ -36,7 +36,7 @@ We use the Decorator Pattern to wrap the TextEditor with additional functionalit
   <img src="../../out/Structural_Design_Pattern/Decorator/decorator/decorator.png">
 </p>
 
-### Advantages 
+### Advantages
 - Extensibility : New features can be added without modifying existing code.
 - Flexible Composition : Multiple decorators can be combined dynamically at runtime.
 - Follows Open-Closed Principle : The original class remains unchanged.

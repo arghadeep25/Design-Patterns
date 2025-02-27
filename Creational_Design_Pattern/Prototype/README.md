@@ -36,7 +36,7 @@ Instead of instantiating a new object, the prototype pattern allows cloning an e
   <img src="../../out/Creational_Design_Pattern/Prototype/prototype/prototype.png" />
   </p>
 
-### Advantages 
+### Advantages
 
 - Reduces initialization costs – Avoids expensive object creation.
 - Encapsulates object construction – Clients don’t need to worry about how objects are created.

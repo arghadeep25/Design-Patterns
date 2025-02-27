@@ -2,7 +2,7 @@
 The Composite Pattern is a structural design pattern that lets clients treat individual objects and compositions of objects uniformly by defining a common interface for both.
 
 ### Real-World Analogy
-Imagine we have two different object, `Boxes` and `Products`. Inside a box there could be a product or a box. Inside the product there could a box and so on. As one is wrapped under another, counting the number of objects will be difficult. 
+Imagine we have two different object, `Boxes` and `Products`. Inside a box there could be a product or a box. Inside the product there could a box and so on. As one is wrapped under another, counting the number of objects will be difficult.
 
 One approach will be unwrapping all the boxes and counting the products separately but this is a lot of effort. In coding practice, this approach will be either too awkward or even impossible.
 

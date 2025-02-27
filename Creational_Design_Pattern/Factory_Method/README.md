@@ -32,4 +32,4 @@ We define a base class (Logistics) with a factory method (createTransport) that 
 - Can introduce new types of products into the program without breaking the existing code
 
 ### Disadvantages
-The code may become more complicated since you need to introduce a lot of new subclasses to implement the pattern. 
+The code may become more complicated since you need to introduce a lot of new subclasses to implement the pattern.

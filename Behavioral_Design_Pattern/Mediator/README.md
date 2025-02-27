@@ -27,22 +27,22 @@ Introduce a Chatroom (mediator) that manages message exchange between users.
 
 ```
        +-------------------+
-       |     Mediator      |  
-       |-------------------|  
-       | +sendMessage()    |  
-       +-------------------+  
-                 ▲  
-                 │  
-        +-----------------+  
-        | ConcreteMediator|  
-        |-----------------|  
-        | - List<Users>   |  
-        | +sendMessage()  |  
-        +-----------------+  
-               ▲ ▲ ▲  
-        +------+ | +------+  
-        | UserA| | |UserB |  
-        +------+ | +------+  
+       |     Mediator      |
+       |-------------------|
+       | +sendMessage()    |
+       +-------------------+
+                 ▲
+                 │
+        +-----------------+
+        | ConcreteMediator|
+        |-----------------|
+        | - List<Users>   |
+        | +sendMessage()  |
+        +-----------------+
+               ▲ ▲ ▲
+        +------+ | +------+
+        | UserA| | |UserB |
+        +------+ | +------+
 ```
 
 ### Advantages

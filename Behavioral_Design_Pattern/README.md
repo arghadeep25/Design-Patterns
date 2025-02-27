@@ -31,21 +31,20 @@
 
 ## 3. Key Takeaways
 
-### 1. **Encapsulation of Behavior:**  
-   - **Strategy, Command, and State** encapsulate behavior and allow it to be changed dynamically.  
+### 1. **Encapsulation of Behavior:**
+   - **Strategy, Command, and State** encapsulate behavior and allow it to be changed dynamically.
 
-### 2. **Request Handling & Control Flow:**  
-   - **Chain of Responsibility** ensures flexible handling of requests.  
-   - **Command** encapsulates actions and supports undo functionality.  
-   - **Mediator** simplifies communication between objects.  
+### 2. **Request Handling & Control Flow:**
+   - **Chain of Responsibility** ensures flexible handling of requests.
+   - **Command** encapsulates actions and supports undo functionality.
+   - **Mediator** simplifies communication between objects.
 
-### 3. **State Management:**  
-   - **Observer** is useful for event-driven updates.  
-   - **Memento** allows restoring previous states (undo functionality).  
-   - **State** pattern helps manage complex state-based behavior.  
+### 3. **State Management:**
+   - **Observer** is useful for event-driven updates.
+   - **Memento** allows restoring previous states (undo functionality).
+   - **State** pattern helps manage complex state-based behavior.
 
-### 4. **Algorithm Structuring:**  
-   - **Template Method** enforces a structure for algorithms.  
-   - **Visitor** allows adding new operations without modifying object structure.  
-   - **Interpreter** helps parse and evaluate expressions.  
-
+### 4. **Algorithm Structuring:**
+   - **Template Method** enforces a structure for algorithms.
+   - **Visitor** allows adding new operations without modifying object structure.
+   - **Interpreter** helps parse and evaluate expressions.

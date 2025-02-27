@@ -1,5 +1,6 @@
 from abc import ABC, abstractmethod
 
+
 # Forward Declaration
 class MusicPlayerState(ABC):
     pass

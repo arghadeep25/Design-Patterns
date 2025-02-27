@@ -1,5 +1,5 @@
 from abc import ABC, abstractmethod
-import os
+
 
 # Target Interface: Old Media Player
 class MediaPlayer(ABC):
@@ -17,19 +17,21 @@ class AdvancedMediaPlayer(ABC):
     def play_vlc(self, filename: str) -> None:
         pass
 
+
 # Concrete Prototype: MP4 player
 class Mp4Player(AdvancedMediaPlayer):
     def play_mp4(self, filename: str) -> None:
         print(f"Playing MP4 file:: {filename}")
-    
-    def play_vlc(self,filename:str) -> None:
+
+    def play_vlc(self, filename: str) -> None:
         pass
+
 
 # Concrete Prototype: VLC player
 class VLCPlayer(AdvancedMediaPlayer):
-    def play_mp4(self, filename:str) -> None:
+    def play_mp4(self, filename: str) -> None:
         pass
-    
+
     def play_vlc(self, filename: str) -> None:
         print(f"Playing VLC fie:: {filename}")
 
@@ -52,11 +54,12 @@ class MediaAdapter(MediaPlayer):
         elif self.media_type == "vlc":
             self.advanced_player.play_vlc(filename=filename)
 
+
 # Client Interface
 class Player(MediaPlayer):
     def __init__(self) -> None:
         super().__init__()
-        
+
     def play(self, filename: str) -> None:
         file_extension: str = filename.split(".")[1]
         if file_extension == "mp3":

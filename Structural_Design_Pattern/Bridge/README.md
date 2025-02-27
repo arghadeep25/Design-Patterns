@@ -31,10 +31,10 @@ That means, Shapes    -> Circle
                       -> Rectangle
             Renderer  -> OpenGL
                       -> DirectX
-To make it compatible, we have to make another two classes CircleOpenGL, CircleDirectX. This will lead to exploding class problem,                    
+To make it compatible, we have to make another two classes CircleOpenGL, CircleDirectX. This will lead to exploding class problem,
 
 ### Solution
-To avoid the exploding class problem, the bridge pattern is applied. This decouples the abstraction (Shape) from the implementation (Renderer). Instead of creating subclasses for each combination, separate Renderer hierarchy is introduced, allowing independent extension of both hierarchies.  
+To avoid the exploding class problem, the bridge pattern is applied. This decouples the abstraction (Shape) from the implementation (Renderer). Instead of creating subclasses for each combination, separate Renderer hierarchy is introduced, allowing independent extension of both hierarchies.
 
 ### UML Diagram
 <p align="center">

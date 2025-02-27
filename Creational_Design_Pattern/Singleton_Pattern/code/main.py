@@ -1,6 +1,5 @@
-
-from typing import Any
 from threading import Lock, Thread
+from typing import Any
 
 
 class SingletonMeta(type):
@@ -13,6 +12,7 @@ class SingletonMeta(type):
     Returns:
         _type_: class instance
     """
+
     _instances = {}
     _lock: Lock = Lock()
 
@@ -31,6 +31,7 @@ class Singleton(metaclass=SingletonMeta):
     Args:
         metaclass (_type_, optional): _description_. Defaults to SingletonMeta.
     """
+
     value: str = None
 
     def __init__(self, value: str) -> None:

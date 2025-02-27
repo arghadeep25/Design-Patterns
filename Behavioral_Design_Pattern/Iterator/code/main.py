@@ -1,6 +1,7 @@
 from abc import ABC, abstractmethod
 from typing import List, Union
 
+
 # Iterator interface
 class Iterator(ABC):
     @abstractmethod
@@ -11,11 +12,13 @@ class Iterator(ABC):
     def next(self) -> Union[str, int]:
         pass
 
+
 # Aggregate interface
 class Iterable(ABC):
     @abstractmethod
-    def create_iterator(self) -> 'Iterator':
+    def create_iterator(self) -> "Iterator":
         pass
+
 
 # Concrete Iterator
 class ConcreteIterator(Iterator):
@@ -33,6 +36,7 @@ class ConcreteIterator(Iterator):
             return value
         raise StopIteration("No more elements.")
 
+
 # Concrete collection
 class ConcreteCollection(Iterable):
     def __init__(self) -> None:
@@ -43,6 +47,7 @@ class ConcreteCollection(Iterable):
 
     def create_iterator(self) -> ConcreteIterator:
         return ConcreteIterator(self.items)
+
 
 def main():
     collection = ConcreteCollection()
@@ -60,10 +65,13 @@ def main():
     collection.add_items("Linkin Park")
     collection.add_items("Coldplay")
 
-    iterator = collection.create_iterator()  # Create a new iterator for the updated collection
+    iterator = (
+        collection.create_iterator()
+    )  # Create a new iterator for the updated collection
     print("\nSecond Iteration:")
     while iterator.has_next():
         print(iterator.next())
+
 
 if __name__ == "__main__":
     main()

@@ -42,4 +42,3 @@ A video streaming application loads large video files from the disk.
 ### Disadvantages
 - Adds Complexity – Requires additional classes and logic.
 - May Slow Down Operations – If not implemented properly, it can introduce overhead.
-

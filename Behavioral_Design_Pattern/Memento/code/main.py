@@ -1,5 +1,6 @@
 from typing import List
 
+
 # Memento: stores the state
 class Memento:
     def __init__(self, state: str) -> None:
@@ -39,7 +40,7 @@ class History:
         return self.__history[index]
 
 
-# Client code 
+# Client code
 def main() -> None:
     editor = TextEditor()
     history = History()
@@ -49,7 +50,7 @@ def main() -> None:
 
     editor.type("world")
     history.add_history(editor.save())
-    
+
     editor.show()
     editor.restore(history.get_history(0))
     editor.show()

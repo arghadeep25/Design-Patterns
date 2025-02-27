@@ -1,25 +1,25 @@
 # Internal Process: Video decoder
 class VideoDecoder:
     def decode(self) -> None:
-        print(f"Decoding Video...")
+        print("Decoding Video...")
 
 
 # Internal Process: audio processor
 class AudioProcessor:
     def process(self) -> None:
-        print(f"Processing audio...")
+        print("Processing audio...")
 
 
 # Internal Process: subtitle loader
 class SubtitleLoader:
     def load(self) -> None:
-        print(f"Loading subtitles...")
+        print("Loading subtitles...")
 
 
 # Internal Process: drm checker
 class DRMChecker:
     def check(self) -> None:
-        print(f"Checking DRM...")
+        print("Checking DRM...")
 
 
 # User interface
@@ -35,7 +35,7 @@ class MoviePlayer:
         self.audio_processor.process()
         self.subtitle_loader.load()
         self.drm_checker.check()
-        print(f"Playing movie...")
+        print("Playing movie...")
 
 
 # Client code

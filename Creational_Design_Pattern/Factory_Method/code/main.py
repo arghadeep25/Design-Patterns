@@ -14,20 +14,20 @@ class Transport(ABC):
 # Concrete transportation: Truck
 class Truck(Transport):
     def deliver(self) -> None:
-        print(f"Delivering by land in a truck")
+        print("Delivering by land in a truck")
 
 
 # Concrete transportation: Truck
 class Plane(Transport):
     def deliver(self) -> None:
-        print(f"Delivering by air in a plane")
+        print("Delivering by air in a plane")
 
 
 # Concrete transportation: Ship
 class Ship(Transport):
     def deliver(self) -> None:
-        print(f"Delivering by water in a ship")
-        
+        print("Delivering by water in a ship")
+
 
 # Abstract logistics class
 class Logistics(ABC):
@@ -47,6 +47,7 @@ class AirLogistics(Logistics):
     def plan_delivery(self) -> Plane:
         return Plane()
 
+
 # Concrete logistics: Water
 class WaterLogistics(Logistics):
     def plan_delivery(self) -> Plane:
@@ -62,7 +63,7 @@ def main() -> None:
     air_logistics = AirLogistics()
     transport: Plane = air_logistics.plan_delivery()
     transport.deliver()
-    
+
     water_logistics = WaterLogistics()
     transport: Ship = water_logistics.plan_delivery()
     transport.deliver()

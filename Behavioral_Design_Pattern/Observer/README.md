@@ -41,8 +41,8 @@ Using the Observer Pattern, we:
         │               +----------------------+
 +------------------+    | + update()           |
 | ConcreteSubject  |----|----------------------|
-| - state          |    
-| + set_state()    |    
+| - state          |
+| + set_state()    |
 +------------------+
 
 ```

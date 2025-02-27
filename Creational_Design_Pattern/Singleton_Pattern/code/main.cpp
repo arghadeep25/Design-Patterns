@@ -53,7 +53,6 @@ class Singleton {
   std::string value() const { return this->m_value; }
 };
 
-
 Singleton* Singleton::m_instance = nullptr;
 std::mutex Singleton::m_mutex;
 

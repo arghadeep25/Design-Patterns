@@ -28,5 +28,3 @@ Structural design patterns focus on organizing different classes and objects to 
 - **Composite and Decorator** focus on organizing object hierarchies and dynamically adding behavior.
 - **Flyweight and Proxy** optimize object usage by sharing instances or controlling access.
 - These patterns ensure better **scalability, maintainability, and reusability** of software systems.
-
-

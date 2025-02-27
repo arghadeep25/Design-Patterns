@@ -1,5 +1,6 @@
 from abc import ABC, abstractmethod
 
+
 # Abstract Renderer
 class Renderer(ABC):
     @abstractmethod
@@ -28,6 +29,7 @@ class Shape(ABC):
     def draw(self):
         pass
 
+
 # Concrete Shape: Circle
 class Circle(Shape):
     def draw(self) -> None:
@@ -43,17 +45,17 @@ class Rectangle(Shape):
 def main():
     opengl_renderer = OpenGLRenderer()
     directx_renderer = DirectXRenderer()
-    
+
     circle_opengl = Circle(opengl_renderer)
     rectangle_opengl = Rectangle(opengl_renderer)
     circle_opengl.draw()
     rectangle_opengl.draw()
-    
+
     circle_directx = Circle(directx_renderer)
     rectangle_directx = Rectangle(directx_renderer)
     circle_directx.draw()
     rectangle_directx.draw()
-    
-    
+
+
 if __name__ == "__main__":
     main()

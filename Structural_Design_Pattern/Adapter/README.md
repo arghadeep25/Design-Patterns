@@ -17,8 +17,8 @@ Developing a universal media player which supports multiple file formats. Curren
 
 To extend the support for .mp4 and .vlc which are using AdvancedMediaPlayer, there should be an interface which can connect to the MediaPlayer. Without the interface, the MediaPlayer doesn't support AdvancedMediaPlayer.
 
-### Solution 
-The MediaAdapter class is created in order to act as a bridge between MediaPlayer and AdvancedMediaPlayer. 
+### Solution
+The MediaAdapter class is created in order to act as a bridge between MediaPlayer and AdvancedMediaPlayer.
 
 ### UML Diagram
 <p align="center">

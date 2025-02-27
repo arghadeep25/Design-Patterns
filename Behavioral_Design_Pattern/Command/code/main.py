@@ -64,7 +64,7 @@ def main() -> None:
     print("Turning off the lights")
     remote_control.set_commands(turn_off_command)
     remote_control.press_button()
-    
+
 
 if __name__ == "__main__":
     main()

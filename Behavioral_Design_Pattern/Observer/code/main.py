@@ -39,7 +39,7 @@ class WeatherStation(Subject):
 
     def detach(self, observer) -> None:
         self.observers.remove(observer)
-    
+
     def notify(self) -> None:
         for observer in self.observers:
             observer.update(self.temperature)
@@ -49,29 +49,29 @@ class WeatherStation(Subject):
 class Laptop(Observer):
     def update(self, temperature: float) -> None:
         print(f"Laptop: {temperature}")
-    
+
 
 # Concrete Observer: Phone
 class Phone(Observer):
     def update(self, temperature: float) -> None:
         print(f"Phone: {temperature}")
-        
+
 
 # Client side
 def main() -> None:
     weather_station = WeatherStation()
     phone = Phone()
     laptop = Laptop()
-    
+
     weather_station.attach(phone)
     weather_station.attach(laptop)
-    
+
     weather_station.set_temperature(23.6)
     weather_station.set_temperature(29.4)
-    
+
     weather_station.detach(phone)
     weather_station.set_temperature(27.4)
-    
+
 
 if __name__ == "__main__":
     main()

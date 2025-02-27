@@ -10,12 +10,12 @@ Imagine you’re designing a home automation system that supports different "sma
 
 - Amazon Alexa Ecosystem.
 - Google Home Ecosystem.
-  
+
 Each ecosystem has its own set of smart devices:
 
 - Smart Speaker
 - Smart Light
-- 
+-
 You want the client code to work seamlessly with any ecosystem without worrying about the concrete classes of the devices. The Abstract Factory pattern can help achieve this.
 
 ```

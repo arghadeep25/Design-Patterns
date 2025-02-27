@@ -12,8 +12,7 @@ class Renderer {
 class OpenGLRenderer : public Renderer {
  public:
   void render_shape(const std::string& shape) const override {
-    std::cout << "Rendering Shape: " << shape << " using OpenGL" <<
-    std::endl;
+    std::cout << "Rendering Shape: " << shape << " using OpenGL" << std::endl;
   }
 };
 
@@ -21,8 +20,7 @@ class OpenGLRenderer : public Renderer {
 class DirectXRenderer : public Renderer {
  public:
   void render_shape(const std::string& shape) const override {
-    std::cout << "Rendering Shape: " << shape << " using DirectX" <<
-    std::endl;
+    std::cout << "Rendering Shape: " << shape << " using DirectX" << std::endl;
   }
 };
 
@@ -32,8 +30,9 @@ class Shape {
   std::shared_ptr<Renderer> renderer_ptr;
 
  public:
-  explicit Shape(std::shared_ptr<Renderer> renderer) : renderer_ptr(renderer)
-  {} virtual ~Shape() = default; virtual void draw() const = 0;
+  explicit Shape(std::shared_ptr<Renderer> renderer) : renderer_ptr(renderer) {}
+  virtual ~Shape() = default;
+  virtual void draw() const = 0;
 };
 
 // Concrete abstraction: Rectangle

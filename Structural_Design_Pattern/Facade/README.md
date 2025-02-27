@@ -41,7 +41,7 @@ Introduce a Facade Class (MoviePlayer) that encapsulates all the complex operati
 - Simplifies Usage : Clients interact with a single, easy-to-use interface.
 - Decouples Complex Systems : The facade shields clients from system complexity.
 -  Improves Maintainability : Changes in subsystems don’t affect the client directly.
--  
+-
 
 ### Disadvantages
 - Can Become a God Object : If not properly designed, the facade may become too large and violate Single Responsibility Principle (SRP).

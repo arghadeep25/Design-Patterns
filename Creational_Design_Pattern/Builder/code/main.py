@@ -1,5 +1,6 @@
 from abc import ABC, abstractmethod
 
+
 # Defining the product
 class House:
     def __init__(self) -> None:
@@ -21,11 +22,12 @@ class House:
         self.windows: str = windows
 
     def show(self) -> None:
-        print(f"House Details::", end=" ")
+        print("House Details::", end=" ")
         print(f"Walls: {self.walls}", end=", ")
         print(f"Roof: {self.roof}", end=", ")
         print(f"Doors: {self.doors}", end=", ")
         print(f"Windows: {self.windows}")
+
 
 # Defining abstract builder
 class HouseBuilder(ABC):
@@ -50,7 +52,7 @@ class HouseBuilder(ABC):
         pass
 
 
-# Defining concrete builder: Wooden House 
+# Defining concrete builder: Wooden House
 class WoodenHouseBuilder(HouseBuilder):
     def __init__(self) -> None:
         self.house = House()
@@ -70,7 +72,8 @@ class WoodenHouseBuilder(HouseBuilder):
     def get_house(self) -> House:
         return self.house
 
-# Defining concrete builder: Stone House 
+
+# Defining concrete builder: Stone House
 class StoneHouseBuilder(HouseBuilder):
     def __init__(self) -> None:
         self.house = House()
@@ -101,6 +104,7 @@ class ConstructionDirector:
         self.house_builder.build_roof()
         self.house_builder.build_doors()
         self.house_builder.build_windows()
+
 
 # Client code
 def main():

@@ -7,6 +7,7 @@ class NavigationStrategy(ABC):
     def calculate_route(self) -> None:
         pass
 
+
 # Concrete Strategy: Car
 class CarNavigation(NavigationStrategy):
     def calculate_route(self) -> None:

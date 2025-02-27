@@ -1,5 +1,6 @@
 from abc import ABC, abstractmethod
 
+
 # Subject Interface
 class Video(ABC):
     @abstractmethod

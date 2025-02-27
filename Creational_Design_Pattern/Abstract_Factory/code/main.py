@@ -14,6 +14,7 @@ class SmartLight(ABC):
     def turn_on(self) -> None:
         pass
 
+
 # Concrete Products for Amazon Devices
 
 
@@ -48,6 +49,7 @@ class SmartHomeFactory(ABC):
     def create_light(self) -> None:
         pass
 
+
 # Concrete Factory for Google Devices
 
 
@@ -57,6 +59,7 @@ class GoogleDeviceFactory(SmartHomeFactory):
 
     def create_light(self) -> GoogleLight:
         return GoogleLight()
+
 
 # Concrete Factory for Amazon Devices
 

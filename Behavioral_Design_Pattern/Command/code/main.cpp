@@ -60,7 +60,6 @@ int main() {
 
   RemoteControl remote;
   remote.set_command(turn_on);
-  
 
   std::cout << "Pressing Remote Button" << std::endl;
   remote.press_button();
