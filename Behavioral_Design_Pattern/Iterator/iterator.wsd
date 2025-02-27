@@ -1,0 +1,30 @@
+@startuml
+
+abstract class Iterator{
+    +has_next() : bool
+    +next() : int
+}
+
+class ConcreteIterator{
+    -collection : vector<int>
+    -position : size_t
+    +ConcreteIterator(in items: vector<int>)
+    +has_next() : bool
+    +next() : int
+}
+
+abstract class Iterable{
+    +create_iterator() : shared_ptr<Iterator>
+}
+
+class ConcreteCollection{
+    -items : vector<int>
+    +add_items(in item: int) : void
+    +create_iterator() : shared_ptr<Iterator>
+}
+
+Iterator <|-- ConcreteIterator
+Iterable <|-- ConcreteCollection
+ConcreteCollection *-- ConcreteIterator
+
+@enduml
