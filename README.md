@@ -240,3 +240,216 @@ Before diving into design patterns, it's essential to understand core object-ori
 - `Strategy` – Allows selecting an algorithm's behavior at runtime.
 
 - `State` – Allows an object to change its behavior when its internal state changes.
+
+
+## <p style='color:orange'>SOLID Principle</p>
+SOLID principle comprised of 5 techniques namely
+- Single Responsibility Principle 
+- Open-Closed Principle
+- Liskov Substitution Principle
+- Interface Segregation Principle
+- Dependency Inversion Principle
+
+### <p style='color:orange'>Single Responsibility Principle</p>
+Each class handling one single responsibility
+
+#### <p style='color:green'>Good Example</p>
+```cpp
+class Report {
+public:
+    std::string generateReport() {
+        return "Report Data";
+    }
+};
+
+class ReportPrinter {
+public:
+    void printReport(const std::string& report) {
+        std::cout << report << std::endl;
+    }
+};
+```
+
+#### <p style='color:red'>Bad Example</p>
+```cpp
+class Report {
+public:
+    std::string generateReport() {
+        return "Report Data";
+    }
+
+    void printReport() {  // Printing logic mixed with report generation
+        std::cout << generateReport() << std::endl;
+    }
+};
+```
+
+### <p style='color:orange'>Open-Closed Principle</p>
+
+A class should be open for extension but closed for modification.
+
+#### <p style='color:green'>Good Example</p>
+```cpp
+class Shape {
+public:
+    virtual double area() const = 0;  // Abstract method
+    virtual ~Shape() = default;
+};
+
+class Circle : public Shape {
+    double radius;
+public:
+    Circle(double r) : radius(r) {}
+    double area() const override {
+        return 3.1415 * radius * radius;
+    }
+};
+
+class Rectangle : public Shape {
+    double width, height;
+public:
+    Rectangle(double w, double h) : width(w), height(h) {}
+    double area() const override {
+        return width * height;
+    }
+};
+```
+
+#### <p style='color:red'>Bad Example</p>
+```cpp
+class Shape {
+public:
+    enum ShapeType { CIRCLE, RECTANGLE };
+    ShapeType type;
+    
+    double getArea() {
+        if (type == CIRCLE) return 3.1415 * 5 * 5;
+        if (type == RECTANGLE) return 10 * 20;
+        return 0;
+    }
+};
+```
+
+### <p style='color:orange'>Liskov Substitution Principle</p>
+Subtypes must be substitutable for their base types without changing behavior.
+
+#### <p style='color:green'>Good Example</p>
+```cpp
+class Bird {
+public:
+    virtual void fly() const {
+        std::cout << "Bird is flying" << std::endl;
+    }
+};
+
+class Sparrow : public Bird {};  // Inherits correct behavior
+
+void makeBirdFly(const Bird& bird) {
+    bird.fly();
+}
+
+Sparrow sparrow;
+makeBirdFly(sparrow);  // Works correctly
+```
+#### <p style='color:red'>Bad Example</p>
+```cpp
+// Penguin inherits from Bird but does not support fly(), violating expectations. Instead, Penguin should not inherit Bird, but rather a NonFlyingBird class.
+class Bird {
+public:
+    virtual void fly() const = 0;
+};
+
+class Penguin : public Bird {
+public:
+    void fly() const override {
+        throw std::runtime_error("Penguins cannot fly!");
+    }
+};
+```
+
+### <p style='color:orange'>Interface Segregation Principle</p>
+A class should not be forced to implement interfaces it does not use.
+#### <p style='color:green'>Good Example</p>
+```cpp
+class Printer {
+public:
+    virtual void print() const = 0;
+};
+
+class Scanner {
+public:
+    virtual void scan() const = 0;
+};
+
+//Classes implement only the methods they need.
+class MultiFunctionPrinter : public Printer, public Scanner {
+public:
+    void print() const override {
+        std::cout << "Printing document" << std::endl;
+    }
+    void scan() const override {
+        std::cout << "Scanning document" << std::endl;
+    }
+};
+```
+#### <p style='color:red'>Bad Example</p>
+```cpp
+// SimplePrinter is forced to implement scan(), even though it cannot scan.
+class Machine {
+public:
+    virtual void print() const = 0;
+    virtual void scan() const = 0;
+};
+
+class SimplePrinter : public Machine {
+public:
+    void print() const override {
+        std::cout << "Printing document" << std::endl;
+    }
+    
+    void scan() const override {
+        throw std::runtime_error("This printer cannot scan!");
+    }
+};
+```
+
+### <p style='color:orange'>Dependency Inversion Principle</p>
+High-level modules should not depend on low-level modules. Both should depend on abstractions.
+#### <p style='color:green'>Good Example</p>
+```cpp
+class Logger {
+public:
+    virtual void log(const std::string& message) const = 0;
+};
+
+class ConsoleLogger : public Logger {
+public:
+    void log(const std::string& message) const override {
+        std::cout << "Log: " << message << std::endl;
+    }
+};
+
+class Application {
+    Logger& logger;
+public:
+    Application(Logger& log) : logger(log) {}
+    void run() {
+        logger.log("Application started");
+    }
+};
+```
+#### <p style='color:red'>Bad Example</p>
+```cpp
+class Application {
+    ConsoleLogger logger;  // Hardcoded dependency
+public:
+    void run() {
+        logger.log("Application started");
+    }
+};
+```
+
+### <p style='color:orange'>Why SOLID?</p>
+- Better maintainability – Code is easier to read, modify, and extend.
+- Reusability – Components can be reused without unnecessary dependencies.
+- Testability – Code is loosely coupled, making unit testing easier.
