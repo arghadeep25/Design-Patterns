@@ -3,7 +3,7 @@
 skinparam TitleFontSize 16
 title "Mediator Pattern UML Diagram"
 
-class User{
+class User {
     #mediator : ChatMediator
     #name: string
     +User(in mediator: ChatMediator, in name: string)
@@ -11,17 +11,16 @@ class User{
     +receive(in message: string) : void
 }
 
-interface ChatMediator{
+interface ChatMediator {
     +add_user(in user: User): void
-    +send_message(in name : string, in user : User): void
+    +send_message(in message: string, in sender: User): void
 }
 
-class ChatRoom{
-    -users : vector<Users>
-    +add_users(in user: Users): void
+class ChatRoom {
+    -users : vector<User>
+    +add_user(in user: User): void
     +send_message(in message: string, in sender: User) : void
 }
-
 
 User o-- ChatMediator
 ChatRoom o-- User
