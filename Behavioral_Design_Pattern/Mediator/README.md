@@ -25,25 +25,10 @@ Introduce a Chatroom (mediator) that manages message exchange between users.
 - Instead, they send messages to the mediator, which forwards them appropriately.
 - This reduces dependencies between users and makes it easier to add/remove them.
 
-```
-       +-------------------+
-       |     Mediator      |
-       |-------------------|
-       | +sendMessage()    |
-       +-------------------+
-                 ▲
-                 │
-        +-----------------+
-        | ConcreteMediator|
-        |-----------------|
-        | - List<Users>   |
-        | +sendMessage()  |
-        +-----------------+
-               ▲ ▲ ▲
-        +------+ | +------+
-        | UserA| | |UserB |
-        +------+ | +------+
-```
+### UML Diagram
+<p align="center">
+<img src="../../out/Behavioral_Design_Pattern/Mediator/mediator/mediator.png">
+</p>
 
 ### Advantages
 - Reduces direct dependencies between objects.
