@@ -244,7 +244,7 @@ Before diving into design patterns, it's essential to understand core object-ori
 
 ## <p style='color:orange'>SOLID Principle</p>
 SOLID principle comprised of 5 techniques namely
-- Single Responsibility Principle 
+- Single Responsibility Principle
 - Open-Closed Principle
 - Liskov Substitution Principle
 - Interface Segregation Principle
@@ -321,7 +321,7 @@ class Shape {
 public:
     enum ShapeType { CIRCLE, RECTANGLE };
     ShapeType type;
-    
+
     double getArea() {
         if (type == CIRCLE) return 3.1415 * 5 * 5;
         if (type == RECTANGLE) return 10 * 20;
@@ -406,7 +406,7 @@ public:
     void print() const override {
         std::cout << "Printing document" << std::endl;
     }
-    
+
     void scan() const override {
         throw std::runtime_error("This printer cannot scan!");
     }
