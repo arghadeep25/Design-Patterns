@@ -1,0 +1,28 @@
+@startuml
+
+skinparam TitleFontSize 16
+title "Template Pattern UML Diagram"
+
+abstract class Beverage{
+    #boil_water(): void
+    #brew(): void
+    #add_extras(): void
+    #pour(): void
+    +prepare(): void
+}
+
+class Tea{
+    #brew(): void
+    #add_extras(): void
+}
+
+class Coffee{
+    #brew(): void
+    #add_extras(): void
+}
+
+Beverage <|-- Tea
+Beverage <|-- Coffee
+
+
+@enduml
