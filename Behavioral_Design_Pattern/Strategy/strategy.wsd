@@ -1,0 +1,36 @@
+@startuml
+
+skinparam TitleFontSize 16
+title "Strategy Pattern UML Diagram"
+
+interface NavigationStrategy{
+    +calculate_route(): void
+}
+
+class CarNavigation{
+    +calculate_route(): void
+}
+
+class BikeNavigation{
+    +calculate_route(): void
+}
+
+class WalkNavigation{
+    +calculate_route(): void
+}
+
+class NavigationContext{
+    -strategy: shared_ptr<NavigationStrategy>
+    +set_strategy(strategy: shared_ptr<NavigationStrategy>): void
+    +navigate(): void
+}
+
+NavigationStrategy <|-- CarNavigation
+NavigationStrategy <|-- BikeNavigation
+NavigationStrategy <|-- WalkNavigation
+
+NavigationContext *-- NavigationStrategy
+
+
+
+@enduml
