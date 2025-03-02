@@ -1,0 +1,46 @@
+@startuml
+
+skinparam TitleFontSize 16
+title "State Pattern UML Diagram"
+
+class MusicPlayerState{
+    +press_play(in player: MusicPlayer): void
+    +press_pause(in player: MusicPlayer): void
+    +press_stop(in player: MusicPlayer): void
+}
+
+class MusicPlayer{
+    +set_state(in new_state: shared_ptr<MusicPlayerState>) : void
+    +press_play(): void
+    +press_pause(): void
+    +press_stop(): void
+}
+
+class PlayingState{
+    +press_play(in player: MusicPlayer): void
+    +press_pause(in player: MusicPlayer): void
+    +press_stop(in player: MusicPlayer): void
+}
+
+class PausedState{
+    +press_play(in player: MusicPlayer): void
+    +press_pause(in player: MusicPlayer): void
+    +press_stop(in player: MusicPlayer): void
+}
+
+class StoppedState{
+    +press_play(in player: MusicPlayer): void
+    +press_pause(in player: MusicPlayer): void
+    +press_stop(in player: MusicPlayer): void
+}
+
+
+
+
+
+MusicPlayerState <|-- PlayingState
+MusicPlayerState <|-- PausedState
+MusicPlayerState <|-- StoppedState
+MusicPlayer *-- MusicPlayerState
+
+@enduml
