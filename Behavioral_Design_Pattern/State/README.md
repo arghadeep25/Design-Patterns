@@ -24,27 +24,10 @@ Imagine a Document Editor with different editing modes (View, Edit, Read-Only).
 ### Solution
 Instead of using multiple conditionals, define separate classes for each state and let the context delegate behavior to the current state.
 
-```
-+----------------+
-|    Context     |
-| - state        |<-------------------+
-| + set_state()  |                    |
-| + request()    |                    |
-+----------------+                    |
-       |                              |
-       v                              |
-+----------------+      +-----------------+
-|  State         |      | ConcreteStateA  |
-| + handle()     |      | + handle()      |
-+----------------+      +-----------------+
-       |                               |
-       v                               |
-+----------------+       +-----------------+
-| ConcreteStateB |       | ConcreteStateC  |
-| + handle()     |       | + handle()      |
-+----------------+       +-----------------+
-
-```
+### UML Diagram
+<p align="center">
+  <img src="../../out/Behavioral_Design_Pattern/State/state/state.png">
+</p>
 
 ### Advantages
 - Encapsulates state-specific behavior: Makes code cleaner.
