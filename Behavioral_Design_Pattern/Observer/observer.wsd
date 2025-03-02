@@ -1,0 +1,38 @@
+@startuml
+
+skinparam TitleFontSize 16
+title "Observer Pattern UML Diagram"
+
+interface Observer{
+    +update(in temperature: float): void
+}
+
+class Subject{
+    +attach(in observer:shared_ptr<Observer>): void
+    +detach(in observer:shared_ptr<Observer>): void
+    +notify(): void
+}
+
+class WeatherStation{
+    -observers: vector<shared_ptr<Observer>>
+    -temperature: float
+    +set_temperature(in temperature: float): void
+    +attach(in observer:shared_ptr<Observer>): void
+    +detach(in observer:shared_ptr<Observer>): void
+    +notify(): void
+}
+
+class Laptop{
+    +update(in temperature: float): void
+}
+
+class Phone{
+    +update(in temperature: float): void
+}
+
+Subject <|-- WeatherStation
+WeatherStation o-- Observer
+Observer <|-- Laptop
+Observer <|-- Phone
+
+@enduml
