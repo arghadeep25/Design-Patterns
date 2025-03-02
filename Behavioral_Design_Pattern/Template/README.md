@@ -34,29 +34,10 @@ Use the Template Method Pattern:
 - Allow subclasses to override only the necessary steps.
 - Ensure that the algorithm structure remains consistent.
 
-```
-        +--------------------------+
-        |   CaffeineBeverage       |  (Abstract Class)
-        |--------------------------|
-        | + prepareBeverage()      |
-        | + boilWater()            |
-        | + pourInCup()            |
-        | + brew() (abstract)      |
-        | + addExtras() (abstract) |
-        +--------------------------+
-                     ▲
-                     │
-        ---------------------------------
-        |                               |
-        |                               |
-  +---------------+              +---------------+
-  |    Tea        |              |   Coffee      |  (Concrete Classes)
-  +---------------+              +---------------+
-  | + brew()      |              | + brew()      |
-  | + addExtras() |              | + addExtras() |
-  +---------------+              +---------------+
-
-```
+### UML Diagram
+<p align="center">
+  <img src="../../out/Behavioral_Design_Pattern/Template/template/template.png">
+</p>
 
 ### Advantages
 - Eliminates Code Duplication → Common steps are in one place.
