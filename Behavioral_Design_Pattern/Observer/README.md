@@ -28,24 +28,10 @@ Using the Observer Pattern, we:
 - Automatically notify observers when the subject’s state changes.
 - Decouple the subject from the observers, making the system flexible.
 
-```
-+----------------+       +------------------+
-|   Subject      |       |   Observer       |
-+----------------+       +------------------+
-| - observers[]  |       | + update()       |
-| + attach()     |       +------------------+
-| + detach()     |               ▲
-| + notify()     |               │
-+----------------+      +----------------------+
-        ▲               |   ConcreteObserver   |
-        │               +----------------------+
-+------------------+    | + update()           |
-| ConcreteSubject  |----|----------------------|
-| - state          |
-| + set_state()    |
-+------------------+
-
-```
+### UML Diagram
+<p align="center">
+<img src="../../out/Behavioral_Design_Pattern/Observer/observer/observer.png">
+</p>
 
 ### Advantages
 - Loose Coupling – Observers and subjects interact via an interface.
