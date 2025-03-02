@@ -1,0 +1,30 @@
+@startuml
+
+skinparam TitleFontSize 16
+title "Memento Pattern UML Diagram"
+
+class Memento{
+    -state: string
+    +Memento(in state: string)
+    +get_state(): string
+}
+
+class TextEditor{
+    -text: string
+    +type(in words: string) : void
+    +show(): void
+    +save(): shared_ptr<Memento>
+    +restore(in memento: shared_ptr<Memento>): void
+}
+
+class History{
+    -history: vector<shared_ptr<Memento>>
+    +add_history(in memento: shared_ptr<Memento>): void
+    +get_history(in index: size_t): Memento
+}
+
+
+TextEditor o-- Memento
+History o-- Memento
+
+@enduml
