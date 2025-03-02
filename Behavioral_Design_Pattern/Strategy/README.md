@@ -35,32 +35,11 @@ Use the Strategy Pattern:
 - The main navigation system delegates route calculations to a selected strategy.
 - Users can dynamically switch between strategies at runtime.
 
-```
-                           +---------------------+
-                           |  NavigationStrategy |
-                           |---------------------|
-                           | +calculateRoute()   |
-                           +---------------------+
-                                      ▲
-                                      │
-----------------------------------------------------------------------
-|                                     |                              |
-|                                     |                              |
-+------------------+         +-----------------+            +-----------------+
-| CarNavigation    |         |  BikeNavigation |            |  WalkNavigation |
-+------------------+         +-----------------+            +-----------------+
-| +calculateRoute()|         |+calculateRoute()|            |+calculateRoute()|
-+------------------+         +-----------------+            +-----------------+
+### UML Diagram
+<p align="center">
+  <img src="../../out/Behavioral_Design_Pattern/Strategy/strategy/strategy.png">
+</p>
 
-                        +---------------------------------+
-                        |          NavigationContext      |
-                        +---------------------------------+
-                        | - strategy: NavigationStrategy  |
-                        | + setStrategy()                 |
-                        | + navigate()                    |
-                        +---------------------------------+
-
-```
 ### Advantages
 - Open-Closed Principle → Easily add new strategies without modifying existing code.
 - Loose Coupling → The navigation system doesn’t depend on specific algorithms.
