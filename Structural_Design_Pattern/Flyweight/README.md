@@ -33,6 +33,7 @@ A game engine needs to render thousands of trees in a large open-world game.
 <p align="center">
   <img src="../../out/Structural_Design_Pattern/Flyweight/flyweight/flyweight.png">
 </p>
+
 ### Advantages
 - Reduces Memory Usage : Avoids duplicate storage of identical data.
 - Improves Performance : Speeds up rendering and object management.
