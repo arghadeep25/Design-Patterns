@@ -453,3 +453,44 @@ public:
 - Better maintainability – Code is easier to read, modify, and extend.
 - Reusability – Components can be reused without unnecessary dependencies.
 - Testability – Code is loosely coupled, making unit testing easier.
+
+## <p style='color:orange'>The Rule of Three in C++</p>
+If a class in C++ defines any one of the followings:
+- Destructor
+- Copy Constructor
+- Copy Assignment Operator
+
+Then it **should define all three**.
+
+These three manage resource ownership (e.g dynamic memory allocation, file handles, mutexes etc.). If one of them is defined to perform custom cleanup, then others should also be defined in order to ensure consistent and safe behavior.
+
+```cpp
+class MyClass {
+private:
+    int* data;
+
+public:
+    // default constructor
+    MyClass(int val) {
+        data = new int(val); // dynamic allocation
+    }
+    //default destructor
+    ~MyClass() {
+        delete data; // custom destructor
+    }
+    // copy constructor
+    MyClass(const MyClass& other) {
+        data = new int(*other.data);
+    }
+    // copy assignment
+    MyClass& operator=(const MyClass& other) {
+        if (this != &other) {
+            delete data;
+            data = new int(*other.data);
+        }
+        return *this;
+    }
+};
+```
+
+If any one of them is missed, then it might lead to **shallow copies** or **double deletion**.
